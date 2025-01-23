@@ -20,8 +20,28 @@ import itertools
 
 def best_hand(hand):
     "From a 7-card hand, return the best 5 card hand."
-    # Your code here
-    pass
+
+    
+    combos = []
+
+    for i in range(len(hand)):
+        for j in range(i + 1, len(hand)):
+         if(i != j):
+                combos.append(hand[:i] + hand[i+1:j] + hand[j+1:])
+
+
+    ranks = []
+    hands = []
+
+    for i in combos:
+        ranks.append(hand_rank(i))
+        hands.append(i)
+
+    j = max(ranks)
+
+    index = ranks.index(j)
+
+    return hands[index]
     
 # ------------------
 # Provided Functions
@@ -87,6 +107,7 @@ def two_pair(ranks):
         return None 
     
 def best_hand_try():
+
     assert (sorted(best_hand("6C 7C 8C 9C TC 5C JS".split()))
             == ['6C', '7C', '8C', '9C', 'TC'])
     assert (sorted(best_hand("TD TC TH 7C 7D 8C 8S".split()))
