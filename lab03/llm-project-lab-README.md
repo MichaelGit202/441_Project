@@ -62,8 +62,12 @@ The [Step 1](#step-1) section below shows the format that you can use to write y
 #### Intention
 >What is the improvement that you intend to make?
 
+    I intend on trying to shape the way the ouputs from the model by storing the story, dialouge, items, and scene it describes so I can remind it better and prevent hallucinations. 
+
 #### Action/Change
 >Why do you think this action/change will improve the agent?
+
+    I think by reprompting with the exact scene the user is in, the items they have, and the dialouge they are having will keep the ai coherent and make it so that it is less forgetful and a hallucinates less.
 
 #### Result
 >What was the result?
