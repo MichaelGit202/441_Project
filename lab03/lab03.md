@@ -9,13 +9,12 @@
 #### Action/Change
 >Why do you think this action/change will improve the agent?
 
-    I set the the number of tokens to 50, the model will have more tokens to respond back to me.
-    
+    I set the the number of tokens to 50, so the model will have more tokens to respond back to me.
 
 #### Result
 >What was the result?
 
-    The LLM could successfully talk back in a shorter ammount of time.
+    The LLM could successfully talk back in a shorter ammount of time compared to 100 tk's.
 
 #### Reflection/Analysis of the result. 
 >Why do you think it did or did not work?
@@ -33,8 +32,7 @@
 #### Action/Change
 >Why do you think this action/change will improve the agent?
 
-   The agent will begin generating a DND story, hopefully, with a way of writing that matches a story-telling-like way instead of being very blunt. Additionally it will specify what it its writing, like the story or dialouge.
-    
+   The agent will begin generating a DND story, hopefully, with a way of writing that matches a story-telling-like way instead of being very blunt. Additionally it will specify what it its writing, like the story or dialouge. Also the way the actions are formatted will hopefully fit the model like how regular prompts do.
 
 #### Result
 >What was the result?
@@ -47,18 +45,20 @@
     It worked in the sense it generated the categories, but the content was a bit confused. More specifications will be needed to get the model to be coherent.
 
 
+
+
+
 ## attempt 3
 #### Intention
 >What is the improvement that you intend to make?
 
-    In the previous attempt when I asked the model why it was messing up I got a hint that it liked **Dialouge**, **STORY** header format better. So I changed the system prompt to include that format and was more specific what goes under those segments.
+    In the previous attempt when I asked the model why it was messing up I got a hint that it liked **Dialouge**, **STORY** header format better compared to the json-like format. So I changed the system prompt to include that format and was more specific what goes under those segments.
 
 #### Action/Change
 >Why do you think this action/change will improve the agent?
 
    The agent added itself to the story, which is partially what I wanted. The Segments have become much more distinct and are now all the same format and do not have any weird capitolization like in the last attempt.
     
-
 #### Result
 >What was the result?
 
@@ -74,7 +74,7 @@
 #### Intention
 >What is the improvement that you intend to make?
 
-   I did not change the sys prompt I just changed the way I started talking ot the model where i just said "just testing, make something short and quick.
+   I did not change the sys prompt I just changed the way I started talking to the model where I just said "just testing, make something short and quick."
 
 #### Action/Change
 >Why do you think this action/change will improve the agent?
@@ -93,21 +93,23 @@
     One of my issues is that it starts the story off in the middle of something, not with a definitive start, more like if you flipped to a random page in a book. Introducing a intro prompt will be beneficial.
 
 
+
 ## attempt 5
 #### Intention
 >What is the improvement that you intend to make?
 
-  Added more clarity to the system prompt.
+  Added more clarity to the system prompt because its just putting whatever under each header.
 
 #### Action/Change
 >Why do you think this action/change will improve the agent?
 
-    Im specifying like what it cant say now. It may NOT use any other headers and must stick to the framework im trying to get it to make. I added for each of the headers stuff like 'in the style of x' so that it may get the hint that it should be writing a story. 
+    Im specifying like what it cant say now. It may NOT use any other headers and must stick to the framework im trying to get it to make. I added In the specification for Scene headers  'in the style of steven king' so that it may get the hint that it should be writing a story. 
 
 #### Result
 >What was the result?
 
-    The model is inserting itself, and its trying to solve a system of equations? Its doing matrix solving or something. Why? Its also adding its own titles: "**WITING**", "**DIALOSONG**", ect.
+    The model is inserting itself, and its trying to solve a system of equations? Its doing matrix solving or something. Why? Its also adding its own titles: "**WITING**", "**DIALOSONG**", ect. 
+
 
 #### Reflection/Analysis of the result. 
 >Why do you think it did or did not work?
@@ -115,18 +117,23 @@
     Im going to try to limit its behavior ny telling it in the sys prompt what it can't do, making a framework it has to work around.
 
 
+
+
 ## attempt 6
 #### Intention
 >What is the improvement that you intend to make?
 
- Added stuff the AI could not do. Made some of the descriptions into a list format so it does not do more that what is in the list and for what it should do and in what order. Specified D&D as Dungeons and Dragons. Told it that it should be writing a story that is interesting.
+    Added stuff the AI could not do. Made some of the descriptions into a list format so it does not do more that what is in the list and for what it should do and in what order. Specified D&D as Dungeons and Dragons. Told it that it should be writing a story that is interesting. I also added 'writing' prompts to dialouge header: "make it in the style of quinten tarentino".
 
 #### Action/Change
 >Why do you think this action/change will improve the agent?
-
+    
+    I think that adding a list of items to complete will make sure the ai does each step. Telling the AI what to do is much more of a specification that what I want it to do. Eliminating what I want it to do. I also added many more 
+    
 #### Result
 >What was the result?
-It started numbering dialouges and scenes, I think its now more like a movie script than a like an entry because I put a bunch of "make it in the style of steven king" and "make it in the style of quinten tarentino"
+
+    It started numbering dialouges and scenes, I think its now more like a movie script than a like an entry because I put a bunch of "make it in the style of steven king" and "make it in the style of quinten tarentino"
 
 #### Reflection/Analysis of the result. 
 >Why do you think it did or did not work?
@@ -184,4 +191,8 @@ It started numbering dialouges and scenes, I think its now more like a movie scr
 
    Looking at its thinking outputs it seems like it sees that I picked a choice, but it just continues with whatever it was thinking about in its previous last segment. It keeps takling about birds and creatures with dark fingers!
    additionally, the dialouge is like not dialouge.
+
+## overall goal
+    I was trying to make it so that it would segment the output based on **headers** then I could segment up the output and put to use the data in reporompting the model. Because it seems to forget alot. However I cant get it to spit out a consistent format. So that is why I have Regex and stuff imported.
+
 
