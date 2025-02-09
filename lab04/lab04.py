@@ -30,7 +30,6 @@ lab04_params = {
 
 if __name__ ==  '__main__':
     # run lab04.py to test your template interactively
-    recruit_template_file = 'lab04_trader_chat.json'
     run_console_chat(template_file=recruit_template_file,
                      recruit_difficulty='not easy',
                      reward='a sword',
