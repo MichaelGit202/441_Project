@@ -27,9 +27,15 @@ class OllamaEmbeddingFunction:
     def __init__(self, model_name="nomic-embed-text"):
         self.model_name = model_name
     
+    #returns class object, list of strings and return the embeddings
     def __call__(self, input: List[str]) -> List[List[float]]:
         """Generate embeddings for a list of texts using Ollama"""
-        pass
+
+        #creating the actual embeddings
+        response = ollama.embed(model='nomic-embed-text', input=input)
+        return response["embeddings"] #returning the embeddings from the object
+
+        
 
 
 def load_documents(data_dir: str) -> Dict[str, str]:
@@ -112,11 +118,21 @@ def setup_chroma_db(chunks: List[Dict[str, Any]], collection_name: str = "dnd_kn
     return collection
 
 
+#ouputs a list of contexts
+#
 def retrieve_context(collection: chromadb.Collection, query: str, n_results: int = 3) -> List[str]:
     """
     Retrieve relevant context from ChromaDB based on the query
     """
-    pass
+
+    #so then we actually do the query, top 3 results
+    results = collection.query(
+        query_texts=query,
+        n_results=n_results
+    )
+
+    return results["documents"][0]
+
 
 
 
@@ -187,6 +203,8 @@ def main():
         chunks, 
         ollama_model=embedding_model
     )
+    
+
     
     # 4. Example queries
     queries = [
