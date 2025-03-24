@@ -18,8 +18,11 @@ def pretty_stringify_chat(messages):
       stringified_chat += f"{role}: {content}\n\n\n"
   return stringified_chat
 
-def insert_params(string, **kwargs):
-    pattern = r"{{(.*?)}}"
+def insert_params(string, **kwargs): #replaces placeholder values with the stuff found in args
+    pattern = r"{{(.*?)}}"           # "Hello, {{name}}! How is the weather in {{city}}?"
+                                     # If kwargs = {"name": "Alice", "city": "New York"}, then it finds:
+                                     # {{name}} → Alice
+                                     # {{city}} → New York
     matches = re.findall(pattern, string)
     for match in matches:
         replacement = kwargs.get(match.strip())
@@ -69,10 +72,10 @@ class TemplateChat:
 
     def completion(self, **kwargs):
         self.parameters |= kwargs
-        for item in self.messages:
+        for item in self.messages: #going through each entry in the dictionary under messages
             item['content'] = insert_params(item['content'], **self.parameters)
 
-        return ollama.chat(**self.instance)
+        return ollama.chat(**self.instance)  # Direct call to Ollama API
 
     def chat_turn(self, **kwargs):
         response = self.completion(**kwargs)
