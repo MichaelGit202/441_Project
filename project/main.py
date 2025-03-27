@@ -13,10 +13,6 @@ from util.llm_Agent_utils import agent
 # a dict of template files {"dungeon-master": {template file}}
     # Need to maintain concurrency across all template files, keeping each one up to date with what it needs to
     # Know
-
-
-
-
 # game state object
 
 
@@ -25,21 +21,28 @@ from util.llm_Agent_utils import agent
 def run_console_chat(seed, agents, **kwargs):
 
     while True:
-        
         response = agents["assistant1"].generate()
-        agents["assistant1"].add_message(response, agents["assistant1"])
-        agents["assistant1"].add_message(response, agents["assistant2"])
+        agents["assistant1"].add_message(response)
+        agents["assistant2"].add_message(response)
+        agents["assistant3"].add_message(response)
         print("assistant 1")
         print(response["message"]["message"]["content"])
+        
 
         
         response = agents["assistant2"].generate()
         print("assistant 2")
         print(response["message"]["message"]["content"])
-        agents["assistant2"].add_message(response, agents["assistant1"])
-        agents["assistant2"].add_message(response, agents["assistant2"])
+        agents["assistant1"].add_message(response)
+        agents["assistant2"].add_message(response)
+        agents["assistant3"].add_message(response)
 
-
+        response = agents["assistant3"].generate()
+        print("assistant 3")
+        print(response["message"]["message"]["content"])
+        agents["assistant1"].add_message(response)
+        agents["assistant2"].add_message(response)
+        agents["assistant3"].add_message(response)
 
 if __name__ == "__main__":
     seed = '441_AI_Project'

@@ -29,7 +29,7 @@ class agent:
         return response
 
 
-    def add_message(self, msg, agent):
+    def add_message(self, msg):
         #OK so here is what we are going to do
         # to get these FUCKERS to talk to each other, we are going to add
         # prompts from other agents will be appended as a USER prompt
@@ -38,10 +38,10 @@ class agent:
 
          #TODO message manipulation is fucked right now ie msg["message"]["message"] <- what is causing this
          # also this is eye vomit code 
-        if(msg["origin"] == agent.data["metadata"]["agent_name"]):
-            agent.data["agent_template"]["messages"].append({"role" : msg["message"]["message"]["role"], "content" : msg["message"]["message"]["content"]})
+        if(msg["origin"] == self.data["metadata"]["agent_name"]):
+            self.data["agent_template"]["messages"].append({"role" : msg["message"]["message"]["role"], "content" : msg["message"]["message"]["content"]})
         else:
-            agent.data["agent_template"]["messages"].append({"role" :"user", "content" : msg["message"]["message"]["content"]})
+            self.data["agent_template"]["messages"].append({"role" :"user", "content" : msg["message"]["message"]["content"]})
 
     #def parse_generator_calls():
      #   pass

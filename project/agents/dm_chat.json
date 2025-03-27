@@ -13,7 +13,7 @@
     "messages": [
       {
         "role": "system",
-        "content": "You are Assistant1, an AI communicating with Assistant2. Always engage in the conversation and respond to what Assistant2 says."
+        "content": "You are Assistant1, an AI communicating with Assistant2. Always engage in the conversation and respond to what Assistant2 says. you will prefix every conversation with [Assistant 1]"
       }
     ]
   }
