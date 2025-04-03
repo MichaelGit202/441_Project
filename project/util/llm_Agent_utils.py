@@ -5,6 +5,8 @@ import json
 import ollama
 import hashlib
 import logging
+from enum import Enum
+
 
 from pathlib import Path
 from types import MethodType
@@ -13,11 +15,10 @@ from collections import defaultdict
 ollama_seed = lambda x: int(str(int(hashlib.sha512(x.encode()).hexdigest(), 16))[:8])
 
 
-#input tag and get a model
+
 def parse_tags(text):
 
     return "name_of_model"
-
 
 
 #function used to parse DM's tags
@@ -26,11 +27,36 @@ def parse_tags(text):
 #      [2] <tag></tag>
 #      [3]  the rest of the dm text
 #      [4] <anotherTag><\anotherTag>
+
+
+
+def handle_player_input(content):
+        print("hello from player input")
+
+def handle_scene (content):
+        print("hello from scene")
+
+def handle_think(content):
+        print("hello from think")
+
+#proomted these up
+class TagType(Enum):
+    THINK = "think"
+    SCENE = "scene"
+    PLAYER_INPUT = "player-input"
+
+
 def split_response(text):
-    pattern = r"(<[^>]+>.*?</[^>]+>)"
-    parts = re.split(pattern, text, maxsplit=1)
-    return parts if len(parts) > 1 else [text]
-        
+    pattern = r"<([^>]+)>(.*?)</\1>"
+    matches = re.findall(pattern, text, re.DOTALL)
+
+    parsed = []
+    for tag, content in matches:
+        # Map tag to Enum if it exists, otherwise keep it as a string
+        tag_enum = TagType[tag.upper().replace("-", "_")] if tag in TagType._value2member_map_ else tag
+        parsed.append((tag_enum, content.strip()))
+
+    return parsed   
 
 class agent:
     data = {}

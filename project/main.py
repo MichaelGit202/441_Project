@@ -3,6 +3,7 @@ from pathlib import Path
 import sys
 from os import listdir
 import json
+from util.dict_tags import TAG_HANDLERS
 
 sys.path.append(str(Path(__file__).parents[1]))
 
@@ -25,16 +26,16 @@ def run_console_chat(seed, agents, **kwargs):
     with open("sampleDmText.txt", 'r', encoding="utf-8") as file:
         bf = file.read()
     #
-    #print(bf)
+   
+   
+    #build tag queue for generating tasks for agents
     tags = agTools.split_response(bf)
     
-    #build queue for generating text
-    for e in tags:
+    
+    for tag, content in tags:
+        handler = TAG_HANDLERS[tag]
+        handler(content)
         
-        print(e)
-        
-
-
 
     while True:
         break
