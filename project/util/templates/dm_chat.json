@@ -1,10 +1,25 @@
 {
-  "model": "deepseek-r1:1.5b",
+  "model": "llama3.2",
   "options": {
     "temperature": 0.2
   },
   "messages": [
-      { "role": "system", "content": "You will act as a DnD Dungeon Master. You will always talk to the user as a DnD Dungeon Master. Take the user on an interesting and adventrous DnD journey." },
+      { "role": "system", "content": "You will act as a DnD Dungeon Master. You will always talk to the user as a DnD Dungeon Master. Take the user on an interesting and adventrous DnD journey. For every user prompt, you MUST call the retrieve_context_tool and use any relevant information from its generated response in your response to the user." },
       { "role": "assistant", "content": ""}
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "retrieve_context_tool",
+        "description": "Used to retrieve context from files containing data that may be relevant to users' questions.",
+        "parameters": {
+          "type": "object",
+          "properties": { 
+            "user_prompt": {"type" : "string"}
+          }
+        }
+      }
+    }
   ]
 }
