@@ -5,7 +5,6 @@ import json
 import ollama
 import hashlib
 import logging
-from enum import Enum
 
 
 from pathlib import Path
@@ -16,46 +15,25 @@ ollama_seed = lambda x: int(str(int(hashlib.sha512(x.encode()).hexdigest(), 16))
 
 
 
-def parse_tags(text):
+#function used to parse tags into a list of tuples
+# ie. <scene> prompt from model</scene>s
 
-    return "name_of_model"
+# returns a tag list in the term 
 
+# if the model spits out a tag that does not exits in TagType
+# that string will be completely ignored
 
-#function used to parse DM's tags
-# returns a list of strings
-#   ex [1] Random dm text ydayada
-#      [2] <tag></tag>
-#      [3]  the rest of the dm text
-#      [4] <anotherTag><\anotherTag>
-
-
-
-def handle_player_input(content):
-        print("hello from player input")
-
-def handle_scene (content):
-        print("hello from scene")
-
-def handle_think(content):
-        print("hello from think")
-
-#proomted these up
-class TagType(Enum):
-    THINK = "think"
-    SCENE = "scene"
-    PLAYER_INPUT = "player-input"
-
-
-def split_response(text):
+def split_response(text, tags):
     pattern = r"<([^>]+)>(.*?)</\1>"
     matches = re.findall(pattern, text, re.DOTALL)
 
     parsed = []
     for tag, content in matches:
-        # Map tag to Enum if it exists, otherwise keep it as a string
-        tag_enum = TagType[tag.upper().replace("-", "_")] if tag in TagType._value2member_map_ else tag
-        parsed.append((tag_enum, content.strip()))
-
+        # if tag exists
+        if tag in tags:
+            parsed.append((tag, content.strip()))
+        else:
+            pass  #things that are not in tags go here 
     return parsed   
 
 class agent:
@@ -63,11 +41,18 @@ class agent:
 
     def __init__(self, agent_info):  
         self.data = agent_info
+
+
+    #handler function when agent is invoked
+    def handle(self, content):
+         #print("handling")
+        raise NotImplementedError("Subclasses should implement this method.")
+
+
     #function dedicated to prompting ollama
-    # I want to make this async at some point to improve response time.
+    # I want to make this async at some point to improve response time.    
     def generate(self):
     
-
         #print(self.data["agent_template"])
         response = {}
         response["message"] = ollama.chat(**self.data["agent_template"]) 
@@ -83,11 +68,20 @@ class agent:
         # prompts from other agents will be appended as a USER prompt
      
          #TODO, fix eye vomit
-        if(msg["origin"] == self.data["metadata"]["agent_name"]):
-            self.data["agent_template"]["messages"].append({"role" : msg["message"]["message"]["role"], "content" : msg["message"]["message"]["content"]})
+        if(msg[0] == self.data["metadata"]["tag"]):
+            self.data["agent_template"]["messages"].append({"role" : "assistant", "content" : msg[1]})
         else:
-            self.data["agent_template"]["messages"].append({"role" :"user", "content" : msg["message"]["message"]["content"]})
+            self.data["agent_template"]["messages"].append({"role" :"user", "content" : msg[1]})
 
-    #def parse_generator_calls():
-     #   pass
+
+
+    
+
+class scene_agent(agent):
+    
+    def handle(self, tag): 
+        print("handling scene")
+        print(tag)
+        self.add_message(tag)
+        return self.generate()
 

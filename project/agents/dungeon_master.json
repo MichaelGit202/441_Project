@@ -1,7 +1,8 @@
 
 {
   "metadata" : {
-    "agent_name" : "dungeon_master"
+    "agent_name" : "dungeon_master",
+    "tag" : "DM"
   },
 "agent_template" : 
   {

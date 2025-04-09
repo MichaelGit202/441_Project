@@ -1,22 +1,23 @@
 import os
+import json
 from pathlib import Path
 import sys
 from os import listdir
-import json
-from util.dict_tags import TAG_HANDLERS
 
-sys.path.append(str(Path(__file__).parents[1]))
+from util.llm_Agent_utils import agent, scene_agent
+import util.llm_Agent_utils as agent_tools
 
-
-from util.llm_utils import TemplateChat
-from util.llm_Agent_utils import agent 
-import util.llm_Agent_utils as agTools
 
 # a dict of template files {"dungeon-master": {template file}}
     # Need to maintain concurrency across all template files, keeping each one up to date with what it needs to
     # Know
 # game state object
 
+
+agent_class_mapping = {
+    "scene" : scene_agent,
+    "DM"    : agent,
+}
 
 
 
@@ -25,17 +26,21 @@ def run_console_chat(seed, agents, **kwargs):
    
     with open("sampleDmText.txt", 'r', encoding="utf-8") as file:
         bf = file.read()
-    #
+    
    
    
     #build tag queue for generating tasks for agents
-    tags = agTools.split_response(bf)
+    parsed_tags = agent_tools.split_response(bf, agents.keys())
     
     
-    for tag, content in tags:
-        handler = TAG_HANDLERS[tag]
-        handler(content)
-        
+    for tag, content in parsed_tags:
+        # from out agent list, we parsed out an existing tag, now we are invoking the that tag's agent's handler function
+        print(tag)
+        response = agents[tag].handle([tag,content])
+
+    #print(response)
+    print(response['message']['message']['content'])
+
 
     while True:
         break
@@ -82,12 +87,14 @@ if __name__ == "__main__":
     print(os.listdir("441_project/project/agents"))
     agent_list = os.listdir("441_project/project/agents")
 
- 
+    tags_from_json = []
     #populate agents list
     for agent_name in agent_list:
-        with open("441_project/project/agents/" + agent_name, 'r') as file:
+        with open("441_project/project/agents/" + agent_name, 'r') as file:            
             data = json.load(file)
-            agents[data["metadata"]["agent_name"]] = agent(data)
-                                                                                               #that there is a way to load in th
+            tag = data["metadata"]["tag"]
+            agents[tag] = agent_class_mapping[tag](data)    
+
+
     run_console_chat(seed=seed, agents=agents)
     
