@@ -1,14 +1,12 @@
 import os
+import json
 from pathlib import Path
 import sys
 from os import listdir
-import json
 
-sys.path.append(str(Path(__file__).parents[1]))
+from util.llm_Agent_utils import agent, simple_response_agent
+import util.llm_Agent_utils as agent_tools
 
-
-from util.llm_utils import TemplateChat
-from util.llm_Agent_utils import agent 
 
 # a dict of template files {"dungeon-master": {template file}}
     # Need to maintain concurrency across all template files, keeping each one up to date with what it needs to
@@ -16,33 +14,34 @@ from util.llm_Agent_utils import agent
 # game state object
 
 
+agent_class_mapping = {
+    "scene" : simple_response_agent,
+    "DM"    : simple_response_agent,
+}
+
 
 
 def run_console_chat(seed, agents, **kwargs):
 
-    while True:
-        response = agents["assistant1"].generate()
-        agents["assistant1"].add_message(response)
-        agents["assistant2"].add_message(response)
-        agents["assistant3"].add_message(response)
-        print("assistant 1")
-        print(response["message"]["message"]["content"])
+   
+    #while True:
+    # DM generates stuff & adds tags
+    # parse tags and their procceses
+    response = agents["DM"].generate()
+    print("===========dungeon master response============")
+    print(response['message']['message']['content'])
+    parsed_tags = agent_tools.split_response(response['message']['message']['content'], agents.keys())
+    print("===========parsed tags============")
+    print(parsed_tags)
+    for tag, content in parsed_tags:
+        # from out agent list, we parsed out an existing tag, now we are invoking the that tag's agent's handler function
+        print("===========Tag============")
+        print(tag)
+        response = agents[tag].handle([tag,content])
+        print("==========={tag} response============")
+        print(response['message']['message']['content'])
         
-
-        
-        response = agents["assistant2"].generate()
-        print("assistant 2")
-        print(response["message"]["message"]["content"])
-        agents["assistant1"].add_message(response)
-        agents["assistant2"].add_message(response)
-        agents["assistant3"].add_message(response)
-
-        response = agents["assistant3"].generate()
-        print("assistant 3")
-        print(response["message"]["message"]["content"])
-        agents["assistant1"].add_message(response)
-        agents["assistant2"].add_message(response)
-        agents["assistant3"].add_message(response)
+    
 
 if __name__ == "__main__":
     seed = '441_AI_Project'
@@ -51,12 +50,14 @@ if __name__ == "__main__":
     print(os.listdir("441_project/project/agents"))
     agent_list = os.listdir("441_project/project/agents")
 
- 
+    tags_from_json = []
     #populate agents list
     for agent_name in agent_list:
-        with open("441_project/project/agents/" + agent_name, 'r') as file:
+        with open("441_project/project/agents/" + agent_name, 'r') as file:            
             data = json.load(file)
-            agents[data["metadata"]["agent_name"]] = agent(data)
-                                                                                               #that there is a way to load in th
+            tag = data["metadata"]["tag"]
+            agents[tag] = agent_class_mapping[tag](data)    
+
+
     run_console_chat(seed=seed, agents=agents)
     
