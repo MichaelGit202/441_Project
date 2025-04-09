@@ -76,12 +76,10 @@ class agent:
 
 
     
-
-class scene_agent(agent):
+#this is basically just a Question answer agent, one prompt one response
+class simple_response_agent(agent):
     
     def handle(self, tag): 
-        print("handling scene")
-        print(tag)
         self.add_message(tag)
         return self.generate()
 

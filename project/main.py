@@ -4,7 +4,7 @@ from pathlib import Path
 import sys
 from os import listdir
 
-from util.llm_Agent_utils import agent, scene_agent
+from util.llm_Agent_utils import agent, simple_response_agent
 import util.llm_Agent_utils as agent_tools
 
 
@@ -15,8 +15,8 @@ import util.llm_Agent_utils as agent_tools
 
 
 agent_class_mapping = {
-    "scene" : scene_agent,
-    "DM"    : agent,
+    "scene" : simple_response_agent,
+    "DM"    : simple_response_agent,
 }
 
 
@@ -24,15 +24,12 @@ agent_class_mapping = {
 def run_console_chat(seed, agents, **kwargs):
 
    
-    with open("sampleDmText.txt", 'r', encoding="utf-8") as file:
-        bf = file.read()
+    #with open("sampleDmText.txt", 'r', encoding="utf-8") as file:
+    #    bf = file.read()
     
-   
-   
     #build tag queue for generating tasks for agents
     parsed_tags = agent_tools.split_response(bf, agents.keys())
-    
-    
+
     for tag, content in parsed_tags:
         # from out agent list, we parsed out an existing tag, now we are invoking the that tag's agent's handler function
         print(tag)
