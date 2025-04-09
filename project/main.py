@@ -24,58 +24,24 @@ agent_class_mapping = {
 def run_console_chat(seed, agents, **kwargs):
 
    
-    #with open("sampleDmText.txt", 'r', encoding="utf-8") as file:
-    #    bf = file.read()
-    
-    #build tag queue for generating tasks for agents
-    parsed_tags = agent_tools.split_response(bf, agents.keys())
-
+    #while True:
+    # DM generates stuff & adds tags
+    # parse tags and their procceses
+    response = agents["DM"].generate()
+    print("===========dungeon master response============")
+    print(response['message']['message']['content'])
+    parsed_tags = agent_tools.split_response(response['message']['message']['content'], agents.keys())
+    print("===========parsed tags============")
+    print(parsed_tags)
     for tag, content in parsed_tags:
         # from out agent list, we parsed out an existing tag, now we are invoking the that tag's agent's handler function
+        print("===========Tag============")
         print(tag)
         response = agents[tag].handle([tag,content])
-
-    #print(response)
-    print(response['message']['message']['content'])
-
-
-    while True:
-        break
-        # DM generates stuff & adds tags
-        # parse tags and their procceses
-        #
-
-        response = agents["dungeon_master"].generate()
-        agents["dungeon_master"].add_message(response)
-
-  
-
+        print("==========={tag} response============")
+        print(response['message']['message']['content'])
         
-  
-
-        #3 agents talkning to eachother
-        #response = agents["assistant1"].generate()
-        #agents["assistant1"].add_message(response)
-        #agents["assistant2"].add_message(response)
-        #agents["assistant3"].add_message(response)
-        #print("assistant 1")
-        #print(response["message"]["message"]["content"])
-        #
-#
-        #
-        #response = agents["assistant2"].generate()
-        #print("assistant 2")
-        #print(response["message"]["message"]["content"])
-        #agents["assistant1"].add_message(response)
-        #agents["assistant2"].add_message(response)
-        #agents["assistant3"].add_message(response)
-#
-        #response = agents["assistant3"].generate()
-        #print("assistant 3")
-        #print(response["message"]["message"]["content"])
-        #agents["assistant1"].add_message(response)
-        #agents["assistant2"].add_message(response)
-        #agents["assistant3"].add_message(response)
+    
 
 if __name__ == "__main__":
     seed = '441_AI_Project'
