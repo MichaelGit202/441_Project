@@ -5,7 +5,7 @@ import json
 import ollama
 import hashlib
 import logging
-
+import random
 
 from pathlib import Path
 from types import MethodType
@@ -36,12 +36,39 @@ def split_response(text, tags):
             pass  #things that are not in tags go here 
     return parsed   
 
+
+
+def replace_tags(tag, dm_response, response):
+    pattern = rf"<{tag}>(.*?)</{tag}>"
+    replacement = f"<{tag}>{response}</{tag}>"
+    return re.sub(pattern, replacement, dm_response, flags=re.DOTALL)
+
+
+
+
 class agent:
-    data = {}
+    data = {
+        #everything from the json file
+    }
+    # I added this tool call thing for tool definitions in the json
+    tool_calls = {  
+        #example rng_tag : rng_function
+    }
 
     def __init__(self, agent_info):  
         self.data = agent_info
+        keys = agent_info.keys()
+        if ("tools" in keys):
+            self.load_tools(agent_info["tools"])
 
+
+    def load_tools(self,tools): 
+        for tool in tools:
+            if(tool["type"] == "function"):
+                tag = tool["function"]["tool_tag"]
+                name = tool["function"]["name"]
+                description = tool["function"]["description"]
+                self.data["agent_template"]["messages"][0]["content"] += ("You have a function named {name} which is called whenever you say *{tag}*, you will only call it by {name}. This function will {description}.")
 
     #handler function when agent is invoked
     def handle(self, content):
@@ -64,7 +91,7 @@ class agent:
 
     def add_message(self, msg):
         #OK so here is what we are going to do
-        # to get these FUCKERS to talk to each other, we are going to add
+        # to get these guys to talk to each other, we are going to add
         # prompts from other agents will be appended as a USER prompt
      
          #TODO, fix eye vomit
@@ -73,6 +100,14 @@ class agent:
         else:
             self.data["agent_template"]["messages"].append({"role" :"user", "content" : msg[1]})
 
+
+    #calls object in the form of
+    #   a tuple of the name of function, then an object, ie a variable/array/json file, that is passed to the function
+    #   [[function_name, {args} ]  , ...  ] 
+    #
+    def process_tool_calls(self, calls):
+        for call in calls:
+            self.tool_calls[call[0]](call[1])
 
 
     
@@ -83,3 +118,26 @@ class simple_response_agent(agent):
         self.add_message(tag)
         return self.generate()
 
+
+
+
+class rng_agent(agent):
+
+    def __init__(self, agent_info):  
+        self.data = agent_info
+        keys = agent_info.keys()
+        if ("tools" in keys):
+            self.load_tools(agent_info["tools"])
+        
+        self.tool_calls = {  
+            "RNGCALL" : self.rng,
+        }
+
+        print(self.tool_calls["RNGCALL"](10))
+
+    def handle(self, tag):
+        self.add_message(tag)
+        return self.generate()
+    
+    def rng(self, upper_bound):
+        return random.randint(0, upper_bound)

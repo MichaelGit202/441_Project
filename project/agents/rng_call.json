@@ -1,0 +1,37 @@
+
+{
+    "metadata" : {
+      "agent_name" : "rng",
+      "tag" : "RNGCall"
+    },
+  "agent_template" : 
+    {
+      "model": "llama3.2",
+      "options": {
+        "temperature": 0.5,
+        "max_tokens": 100
+      },
+      "messages": [
+        {
+            "role": "system",
+            "content": "You are an RNG Resolution Agent. When given an <RNGCall> prompt, call RNG() to get a number, then interpret the number in context and respond with a single <RNGResult> tag that vividly describes what happened (e.g. success/failure/event), optionally including the roll. Never return raw numbers or <RNGCall>; always respond meaningfully and narratively inside <RNGResult>."
+        }
+      ]
+      
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "rng",
+          "tool_tag":"RNGCALL",
+          "function_definition":"rng",
+          "description": "gets a random number",
+          "parameters": {
+              "type": "object",
+              "properties": {"upper_bound": {"type": "int"}}
+          }
+        }
+      }]
+    }
+  

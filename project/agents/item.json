@@ -1,0 +1,22 @@
+
+{
+    "metadata" : {
+      "agent_name" : "item_generator",
+      "tag" : "item"
+    },
+  "agent_template" : 
+    {
+      "model": "llama3.2",
+      "options": {
+        "temperature": 0.2,
+        "max_tokens": 100
+      },
+      "messages": [
+        {
+            "role": "system",
+            "content": "You are an Item Agent dedicated to inventing unique, imaginative items with vivid descriptions, detailing their appearance, use, lore, and any magical or mechanical properties."
+          }              
+
+      ]
+    }
+  }
