@@ -44,6 +44,22 @@ def replace_tags(tag, dm_response, response):
     return re.sub(pattern, replacement, dm_response, flags=re.DOTALL)
 
 
+def process_tags( dm_response, agents):
+    tags = split_response(dm_response['message']['message']['content'], agents.keys()) 
+    print("=============Parsed Tags============")
+    for tag, content in tags:
+        # from out agent list, we parsed out an existing tag, now we are invoking the that tag's agent's handler function
+        print("===========Tag============")
+        print(tag)
+        response = agents[tag].handle([tag,content])
+        #print(response)
+        dm_response['message']['message']['content'] = replace_tags(tag, dm_response['message']['message']['content'], response['message']['message']['content'])
+    
+                
+    print("=========== filled response============")
+    print(dm_response['message']['message']['content'])
+    return dm_response
+
 
 
 class agent:
@@ -110,6 +126,7 @@ class agent:
             self.tool_calls[call[0]](call[1])
 
 
+
     
 #this is basically just a Question answer agent, one prompt one response
 class simple_response_agent(agent):
@@ -117,7 +134,6 @@ class simple_response_agent(agent):
     def handle(self, tag): 
         self.add_message(tag)
         return self.generate()
-
 
 
 
@@ -141,3 +157,45 @@ class rng_agent(agent):
     
     def rng(self, upper_bound):
         return random.randint(0, upper_bound)
+
+
+
+class trader_agent(agent):
+    
+    def __init__(self, agent_info):
+        self.data = agent_info
+
+
+    def handle(self, tag):
+        # Add the initial message to the conversation
+        print("TRADER SEQUENCE")
+        self.add_message(tag)
+
+        while True:
+            # Generate a response from the agent
+            response = self.generate()
+            #process_tags(response, agents)
+            # Extract the message text
+            message_text = response["message"]["message"]["content"]
+
+            # Print or log the message (optional)
+            print(f"TRADER: {message_text}")
+
+            # Check if it signals the end of the trade
+            if re.search(r"TRADE(.*)DONE", message_text, re.DOTALL):
+                print("Trade sequence complete.")
+                return response  # Or return the full conversation if you store history
+            
+            # Otherwise, continue conversation by appending as assistant's message
+            self.data["agent_template"]["messages"].append({
+                "role": "assistant",
+                "content": message_text
+            })
+            print("Your input: ")
+            user_msg = input()
+            
+            self.data["agent_template"]["messages"].append({
+                "role": "user",
+                "content": user_msg,
+            })
+    

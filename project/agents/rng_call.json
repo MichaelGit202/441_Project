@@ -30,7 +30,8 @@
           "parameters": {
               "type": "object",
               "properties": {"upper_bound": {"type": "int"}}
-          }
+          },
+          "end_regex" : "TRADE(.*)DONE"
         }
       }]
     }

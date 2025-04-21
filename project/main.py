@@ -4,7 +4,7 @@ from pathlib import Path
 import sys
 from os import listdir
 
-from util.llm_Agent_utils import agent, simple_response_agent, rng_agent
+from util.llm_Agent_utils import agent, simple_response_agent, rng_agent, trader_agent
 import util.llm_Agent_utils as agent_tools
 
 
@@ -21,7 +21,7 @@ agent_class_mapping = {
     "RNGCall" : rng_agent,
     "dialogue" : simple_response_agent,
     "battle" : simple_response_agent,
-    "trader" : simple_response_agent,
+    "trader" : trader_agent,
     "player_input" : simple_response_agent,
     "item" : simple_response_agent 
 }
@@ -39,23 +39,9 @@ def run_console_chat(seed, agents, **kwargs):
         print(dm_response['message']['message']['content'])
 
         # parsing tags
-        parsed_tags = agent_tools.split_response(dm_response['message']['message']['content'], agents.keys()) 
-        print("===========parsed tags============")
-        print(parsed_tags)
 
+        agent_tools.process_tags(dm_response=dm_response, agents=agents)
         #parsing tags
-        for tag, content in parsed_tags:
-            # from out agent list, we parsed out an existing tag, now we are invoking the that tag's agent's handler function
-            
-            print("===========Tag============")
-            print(tag)
-            response = agents[tag].handle([tag,content])
-
-            dm_response['message']['message']['content'] = agent_tools.replace_tags(tag, dm_response['message']['message']['content'], response['message']['message']['content'])
-            
-            
-        print("=========== filled response============")
-        print(dm_response['message']['message']['content'])
         
         agents["DM"].add_message(["Filled_Response", dm_response['message']['message']['content']])
         
@@ -82,7 +68,7 @@ if __name__ == "__main__":
             data = json.load(file)
             tag = data["metadata"]["tag"]
             agents[tag] = agent_class_mapping[tag](data)    
-        
+            
 
     run_console_chat(seed=seed, agents=agents)
 
