@@ -7,7 +7,7 @@ from os import listdir
 
 from util.agent_class_mapping import agent_class_mapping
 import util.llm_agent_utils as agent_tools
-import util.gameState as game_state
+import util.game_state as game_state
 
 # a dict of template files {"dungeon-master": {template file}}
     # Need to maintain concurrency across all template files, keeping each one up to date with what it needs to
@@ -17,7 +17,8 @@ agents = {}
 def run_console_chat(seed, agents, **kwargs):
 
     while(True):
-        dm_response = agents["DM"].generate()      # dungeon master generates a thing
+        #dm_response = agents["DM"].generate()      # dungeon master generates a thing, commented when debugging
+        dm_response = debug_DM_response() 
         print("===========dungeon master response============")
         print(dm_response['message']['message']['content'])
 
@@ -31,6 +32,15 @@ def run_console_chat(seed, agents, **kwargs):
             file.write("\n\n\n")
             file.write("======================END===================")
         
+
+def debug_DM_response():
+    with open("debug_response.txt") as file:
+        content = file.read()
+        msg = {}
+        msg['message'] = {}
+        msg['message']['message'] = {}
+        msg['message']['message']['content'] = content
+        return msg
 
 
 def prepare_game():
