@@ -169,4 +169,7 @@ As you leap into the air, your feet barely clear the edge of the canyon. The win
 You've made it! You've successfully crossed the canyon, though your jump was incredibly close to disaster. The terrain ahead appears treacherous, with jagged rocks and overgrown vegetation making every step a challenge.</RNGCall>
 
 
+======================END=========================================START===================<RNGCall>You come across a canyon that yoy must cross.</RNGCall>
+
+
 ======================END===================

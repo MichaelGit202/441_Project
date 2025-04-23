@@ -14,6 +14,7 @@ import util.game_state as game_state
 agents = {}
 
 
+
 def run_console_chat(seed, agents, **kwargs):
 
     while(True):
@@ -61,8 +62,7 @@ def prepare_game():
 
 
 if __name__ == "__main__":
-    seed = '441_AI_Project'
-            
+    seed = '441_AI_Project'      
     prepare_game()
     run_console_chat(seed=seed, agents=agents)
 

@@ -1,5 +1,4 @@
 #library for agent functions
-
 import re
 import json
 import ollama
@@ -10,6 +9,7 @@ import random
 from pathlib import Path
 from types import MethodType
 from collections import defaultdict
+
 
 ollama_seed = lambda x: int(str(int(hashlib.sha512(x.encode()).hexdigest(), 16))[:8])
 
@@ -52,14 +52,31 @@ def process_tags( dm_response, agents):
         print(tag)
         response = agents[tag].handle([tag,content])
         #print(response)
-        dm_response['message']['message']['content'] = replace_tags(tag, dm_response['message']['message']['content'], response['message']['message']['content'])
+        #dm_response['message']['message']['content'] = replace_tags(tag, dm_response['message']['message']['content'], response['message']['message']['content'])
     
                 
-    print("=========== filled response============")
-    print(dm_response['message']['message']['content'])
-    return dm_response
+    #print("=========== filled response============")
+    #print(dm_response['message']['message']['content'])
+    #return dm_response
 
 
+#function designed to parse and add messages when they are generated
+#agentTags is which agents you want to add the message to
+#IO is for like UI, like you create some sort of stream and output it through the IO specification inside of IO.py
+# IO is a list
+
+#note message is that tuple message thing where its [source agents tag, the message object it returned]
+#I dont like it either but we already this far
+def output_message(agents, agentsTags, message, IO):
+
+    for tag in agentsTags:
+        agents[tag].add_message(message)
+    
+    for output in IO:
+        output(message[1])
+
+
+    
 
 
 

@@ -1,7 +1,10 @@
 import ollama
-
+from ..IO import cmd_output
+from ..llm_agent_utils import output_message
 
 class Agent:
+    default_output = cmd_output
+
     data = {
         #everything from the json file
     }
@@ -41,6 +44,7 @@ class Agent:
     
         #print(self.data["agent_template"])
         response = {}
+        print(self.data["agent_template"])
         response["message"] = ollama.chat(**self.data["agent_template"]) 
         response["origin"] = {}
         response["origin"] = self.data["metadata"]["agent_name"] 
@@ -66,3 +70,14 @@ class Agent:
     def process_tool_calls(self, calls):
         for call in calls:
             self.tool_calls[call[0]](call[1])
+
+    def parse_caller(self, message):
+        pass
+
+    #NO >:(
+    #def str_to_msg(self, str):
+    #    msg = {}
+    #    msg['message'] = {}
+    #    msg['message']['message'] = {}
+    #    msg['message']['message']['content'] = str
+    #    return msg
