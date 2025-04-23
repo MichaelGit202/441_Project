@@ -1,5 +1,7 @@
+import re
 from .agent import Agent
-
+from ..llm_agent_utils import output_message
+from ..IO import cmd_output
 
 class trader_agent(Agent):
     
@@ -8,37 +10,56 @@ class trader_agent(Agent):
         self.game_state = game_state
         self.agents = agents  
 
-
     def handle(self, tag):
-        # Add the initial message to the conversation
-        print("TRADER SEQUENCE")
+        output_message(
+            agents=self.agents,
+            agentsTags=["DM", tag[0]],
+            message=["trader", tag[1]],
+            IO=[cmd_output]
+        )
         self.add_message(tag)
 
         while True:
-            # Generate a response from the agent
             response = self.generate()
-            #process_tags(response, agents)
-            # Extract the message text
             message_text = response["message"]["message"]["content"]
 
-            # Print or log the message (optional)
-            print(f"TRADER: {message_text}")
+            # Use output_message instead of print
+            output_message(
+                agents=self.agents,
+                agentsTags=["DM", tag[0]],
+                message=["trader", message_text],
+                IO=[cmd_output]
+            )
 
-            # Check if it signals the end of the trade
+            # Check if trade is done
             if re.search(r"TRADE(.*)DONE", message_text, re.DOTALL):
-                print("Trade sequence complete.")
-                return response  # Or return the full conversation if you store history
-            
-            # Otherwise, continue conversation by appending as assistant's message
+                output_message(
+                    agents=self.agents,
+                    agentsTags=["DM", tag[0]],
+                    message=["trader", "Trade sequence complete."],
+                    IO=[cmd_output]
+                )
+                return response
+
+            # Add assistant's message
             self.data["agent_template"]["messages"].append({
                 "role": "assistant",
                 "content": message_text
             })
-            print("Your input: ")
+
+            # Prompt user for input
+            output_message(
+                agents=self.agents,
+                agentsTags=["DM", tag[0]],
+                message=["user", "Your input: "],
+                IO=[cmd_output]
+            )
+
             user_msg = input()
-            
-            self.data["agent_template"]["messages"].append({
-                "role": "user",
-                "content": user_msg,
-            })
-    
+
+            output_message(
+                agents=self.agents,
+                agentsTags=["DM", tag[0]],
+                message=["user", user_msg],
+                IO=[cmd_output]
+            )

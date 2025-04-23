@@ -1,1 +1,1 @@
-<RNGCall>You come across a canyon that yoy must cross.</RNGCall>
+<trader>You walk into the shop.</trader>

@@ -77,7 +77,7 @@ class rng_agent(Agent):
             IO=[cmd_output]
         )
 
-        # Step 4: Final DM interpretation
+        # Step 4: Final interpretation
         final_response = self.generate()
         output_message(
             agents=self.agents,
