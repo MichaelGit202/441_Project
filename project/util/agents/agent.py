@@ -44,7 +44,7 @@ class Agent:
     
         #print(self.data["agent_template"])
         response = {}
-        print(self.data["agent_template"])
+
         response["message"] = ollama.chat(**self.data["agent_template"]) 
         response["origin"] = {}
         response["origin"] = self.data["metadata"]["agent_name"] 

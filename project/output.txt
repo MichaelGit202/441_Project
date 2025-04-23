@@ -172,4 +172,7 @@ You've made it! You've successfully crossed the canyon, though your jump was inc
 ======================END=========================================START===================<RNGCall>You come across a canyon that yoy must cross.</RNGCall>
 
 
+======================END=========================================START===================<RNGCall>You come across a canyon that yoy must cross.</RNGCall>
+
+
 ======================END===================
