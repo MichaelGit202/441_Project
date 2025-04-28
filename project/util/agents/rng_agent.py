@@ -53,13 +53,13 @@ class rng_agent(Agent):
         user_msg = ["user", user_input]
         self.add_message(user_msg)
 
-       
         output_message(
             agents=self.agents,
-            agentsTags=["DM", tag[0]],
-            message=user_msg,
-            IO=[chatroom_output]
+            agentsTags=["RNGCall", tag[0]],
+            message=["user", user_msg],
+            IO=[]
         )
+
 
         # Step 3: Perform RNG and interpret result
         upper = self.parse_upper_bound(tag[1])

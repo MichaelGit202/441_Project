@@ -32,6 +32,9 @@
   </div>
 
   <script>
+
+
+
     const form = document.getElementById('chat-form');
     const input = document.getElementById('user-input');
     const chatBox = document.getElementById('chat-box');
@@ -49,11 +52,11 @@
       if (!message) return;
 
       // Append user message
-      const userMsg = document.createElement('div');
-      userMsg.className = "bg-blue-500 text-white p-2 rounded-xl self-end max-w-[75%]";
-      userMsg.textContent = message;
-      chatBox.appendChild(userMsg);
-      chatBox.scrollTop = chatBox.scrollHeight;
+      //const userMsg = document.createElement('div');
+      //userMsg.className = "bg-blue-500 text-white p-2 rounded-xl self-end max-w-[75%]";
+      //userMsg.textContent = message;
+      //chatBox.appendChild(userMsg);
+      //chatBox.scrollTop = chatBox.scrollHeight;
 
       input.value = '';
 

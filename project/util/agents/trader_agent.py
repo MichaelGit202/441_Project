@@ -1,7 +1,8 @@
 import re
 from .agent import Agent
 from ..llm_agent_utils import output_message
-from ..IO import cmd_output, chatroom_output
+from ..IO import cmd_output, chatroom_output, get_user_input
+
 
 class trader_agent(Agent):
     
@@ -47,19 +48,12 @@ class trader_agent(Agent):
                 "content": message_text
             })
 
-            # Prompt user for input
-            output_message(
-                agents=self.agents,
-                agentsTags=["DM", tag[0]],
-                message=["user", "Your input: "],
-                IO=[chatroom_output]
-            )
 
-            user_msg = input()
+            user_msg = get_user_input()
 
             output_message(
                 agents=self.agents,
                 agentsTags=["DM", tag[0]],
                 message=["user", user_msg],
-                IO=[chatroom_output]
+                IO=[]
             )

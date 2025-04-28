@@ -4,23 +4,29 @@ import time
 app = Flask(__name__)
 
 chat_history = []
-disabled_by_backend = False
+disabled_by_backend = True
 waiting_for_user = False
 
+#render code for flask, dont touch this unless we want a MPA, Im not gona write that
 @app.route('/')
 def index():
     return render_template('chat.html', disabled=disabled_by_backend)
 
+#function that is invoked when the send button is clicked
 @app.route('/send_message', methods=['POST'])
 def get_user_input():
-    data = request.get_json()
-    user_message = data.get('message', '')
-
-    add_chat_message(["user", user_message])
-    #return jsonify({'reply': response})
+    if(not disabled_by_backend):
+        data = request.get_json()
+        user_message = data.get('message', '')
+        add_chat_message(["user", user_message])
+        #return jsonify({'reply': response})
+    else:
+        print("=============================================")   
+        print(disabled_by_backend) 
 
 
 # I would note that you should never do this in flask
+# So this is a loop which checks the chat history when the user input it prompted
 def listen_for_input():
     last_message_count = len(chat_history)
 
@@ -34,6 +40,10 @@ def listen_for_input():
             return new_message
 
 
+#this is heavily written by chat gpt if you could not tell
+# this is the ""Web socket"" that checks if new content has been added to the
+#webpage and if it did it adds it to chat_history automatically.
+# you can think of this as the ""
 @app.route('/stream')
 def stream():
     def event_stream():
@@ -52,7 +62,7 @@ def stream():
     return Response(event_stream(), mimetype="text/event-stream")
 
 def add_chat_message(msg):
-    print("INSIDE OF ADD_CHAT_MSG")
+    #print("INSIDE OF ADD_CHAT_MSG")
     print(msg)
     chat_history.append({'sender': msg[0], 'text': msg[1]})
 
@@ -61,6 +71,7 @@ def add_chat_message(msg):
 # the UI, I hate this
 @app.route('/get_chat_history')
 def get_chat_history():
+    print(chat_history)
     return jsonify({'history': chat_history})
 
 
