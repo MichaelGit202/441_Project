@@ -68,14 +68,14 @@ def process_tags( dm_response, agents):
 #note message is that tuple message thing where its [source agents tag, the message object it returned]
 #I dont like it either but we already this far
 def output_message(agents, agentsTags, message, IO):
-
     for tag in agentsTags:
         agents[tag].add_message(message)
     
     for output in IO:
-        output(message[1])
+        output(message)
 
-
+def input_message(IO):
+    return IO()
     
 
 

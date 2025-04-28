@@ -1,1 +1,1 @@
-<trader>You walk into the shop.</trader>
+<RNGCall>I arrive at a cliff.</RNGCall>

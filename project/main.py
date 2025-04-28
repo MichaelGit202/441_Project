@@ -11,7 +11,7 @@ import util.game_state as game_state
 
 # a dict of template files {"dungeon-master": {template file}}
     # Need to maintain concurrency across all template files, keeping each one up to date with what it needs to
-agents = {}
+
 
 
 
@@ -45,6 +45,8 @@ def debug_DM_response():
 
 
 def prepare_game():
+    agents = {}
+
     print(os.listdir("./agent_templates"))
 
     agent_list = os.listdir("./agent_templates")
@@ -58,12 +60,12 @@ def prepare_game():
             data = json.load(file)
             tag = data["metadata"]["tag"]
             agents[tag] = agent_class_mapping[tag](data, gs, agents)   
-     
+    return agents
 
 
 if __name__ == "__main__":
     seed = '441_AI_Project'      
-    prepare_game()
+    agents = prepare_game()
     run_console_chat(seed=seed, agents=agents)
 
     

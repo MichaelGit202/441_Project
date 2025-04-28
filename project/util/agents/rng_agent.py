@@ -2,7 +2,7 @@ from .agent import Agent
 import random
 import re  # regex >:(
 from ..llm_agent_utils import output_message
-from ..IO import cmd_output
+from ..IO import cmd_output, get_user_input, chatroom_output
 
 class rng_agent(Agent):
     def __init__(self, agent_info, game_state, agents):
@@ -34,7 +34,7 @@ class rng_agent(Agent):
             agents=self.agents,
             agentsTags=["DM", tag[0]], #caller goes here if exists
             message=formatted_tag,
-            IO=[cmd_output]
+            IO=[chatroom_output]
         )
 
         self.add_message(tag)
@@ -45,19 +45,20 @@ class rng_agent(Agent):
             agents=self.agents,
             agentsTags=["DM", tag[0]],
             message=["RNGCall", prompt["message"]["message"]["content"]],
-            IO=[cmd_output]
+            IO=[chatroom_output]
         )
 
         # Step 2: Get player input
-        user_input = input()
+        user_input = get_user_input()
         user_msg = ["user", user_input]
-        #self.add_message(user_msg)
+        self.add_message(user_msg)
 
+       
         output_message(
             agents=self.agents,
             agentsTags=["DM", tag[0]],
             message=user_msg,
-            IO=[cmd_output]
+            IO=[chatroom_output]
         )
 
         # Step 3: Perform RNG and interpret result
@@ -74,16 +75,19 @@ class rng_agent(Agent):
             agents=self.agents,
             agentsTags=["DM", tag[0]],
             message=rng_result_msg,
-            IO=[cmd_output]
+            IO=[chatroom_output]
         )
 
         # Step 4: Final interpretation
         final_response = self.generate()
+
+        print(final_response)
+
         output_message(
             agents=self.agents,
             agentsTags=["DM", tag[0]],
             message=["RNGCall",final_response["message"]["message"]["content"]],
-            IO=[cmd_output]
+            IO=[chatroom_output]
         )
         return final_response
 

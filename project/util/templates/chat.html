@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DND LLM Chat</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center min-h-screen p-4">
+  <div class="w-full max-w-3xl bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col">
+    <h1 class="text-3xl font-bold mb-4 text-center">DND LLM Chat Room</h1>
+
+    <div id="chat-box" class="flex-1 overflow-y-auto space-y-3 bg-gray-700 p-4 rounded-xl h-[500px]">
+      <!-- Messages will be appended here -->
+    </div>
+
+    <form id="chat-form" class="mt-4 flex">
+      <input 
+        id="user-input" 
+        type="text" 
+        placeholder="Type your message..." 
+        class="flex-1 px-4 py-2 rounded-l-xl bg-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        autocomplete="off"
+      />
+      <button 
+        type="submit" 
+        class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-r-xl font-semibold"
+      >
+        Send
+      </button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('chat-form');
+    const input = document.getElementById('user-input');
+    const chatBox = document.getElementById('chat-box');
+
+    const disabledByBackend = false; // Set via backend if needed
+
+    if (disabledByBackend) {
+      input.disabled = true;
+      input.placeholder = "Input disabled by DM...";
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const message = input.value.trim();
+      if (!message) return;
+
+      // Append user message
+      const userMsg = document.createElement('div');
+      userMsg.className = "bg-blue-500 text-white p-2 rounded-xl self-end max-w-[75%]";
+      userMsg.textContent = message;
+      chatBox.appendChild(userMsg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      input.value = '';
+
+      // Send message to backend
+      const res = await fetch('/send_message', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await res.json();
+      const llmReply = document.createElement('div');
+      llmReply.className = "bg-gray-600 text-white p-2 rounded-xl self-start max-w-[75%]";
+      llmReply.textContent = data.reply;
+      chatBox.appendChild(llmReply);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    });
+
+    const eventSource = new EventSource('/stream');
+
+    eventSource.onmessage = function(event) {
+      const chatBox = document.getElementById('chat-box');
+      const data = event.data;
+      
+      const msgDiv = document.createElement('div');
+      msgDiv.className = "bg-gray-600 text-white p-2 rounded-xl max-w-[75%] mb-2";
+      msgDiv.textContent = data;
+      chatBox.appendChild(msgDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    };
+
+    async function fetchMessages() {
+      const res = await fetch('/get_chat_history');
+      const data = await res.json();
+      chatBox.innerHTML = ''; // clear
+      for (const msg of data.history) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = "p-2 rounded-xl max-w-[75%] " + (msg.sender === 'user' ? 'bg-blue-500 self-end' : 'bg-gray-600 self-start');
+        msgDiv.textContent = msg.sender + ": " + msg.text;
+        chatBox.appendChild(msgDiv);
+      }
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+     // Fetch every second the full message history because 
+     // FLASK MAKES ME MAD
+     setInterval(fetchMessages, 1000);
+  </script>
+</body>
+</html>
