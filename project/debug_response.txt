@@ -1,1 +1,1 @@
-<trader>You walk into the shop.</trader>
+<trader>I enter the shop.</trader>

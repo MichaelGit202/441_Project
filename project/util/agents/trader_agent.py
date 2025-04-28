@@ -1,7 +1,8 @@
 import re
 from .agent import Agent
 from ..llm_agent_utils import output_message
-from ..IO import cmd_output
+from ..IO import cmd_output, chatroom_output, get_user_input
+
 
 class trader_agent(Agent):
     
@@ -15,7 +16,7 @@ class trader_agent(Agent):
             agents=self.agents,
             agentsTags=["DM", tag[0]],
             message=["trader", tag[1]],
-            IO=[cmd_output]
+            IO=[chatroom_output]
         )
         self.add_message(tag)
 
@@ -28,7 +29,7 @@ class trader_agent(Agent):
                 agents=self.agents,
                 agentsTags=["DM", tag[0]],
                 message=["trader", message_text],
-                IO=[cmd_output]
+                IO=[chatroom_output]
             )
 
             # Check if trade is done
@@ -37,7 +38,7 @@ class trader_agent(Agent):
                     agents=self.agents,
                     agentsTags=["DM", tag[0]],
                     message=["trader", "Trade sequence complete."],
-                    IO=[cmd_output]
+                    IO=[chatroom_output]
                 )
                 return response
 
@@ -47,19 +48,12 @@ class trader_agent(Agent):
                 "content": message_text
             })
 
-            # Prompt user for input
-            output_message(
-                agents=self.agents,
-                agentsTags=["DM", tag[0]],
-                message=["user", "Your input: "],
-                IO=[cmd_output]
-            )
 
-            user_msg = input()
+            user_msg = get_user_input()
 
             output_message(
                 agents=self.agents,
                 agentsTags=["DM", tag[0]],
                 message=["user", user_msg],
-                IO=[cmd_output]
+                IO=[]
             )
