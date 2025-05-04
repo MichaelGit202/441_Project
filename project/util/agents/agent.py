@@ -30,7 +30,7 @@ class Agent:
                 tag = tool["function"]["tool_tag"]
                 name = tool["function"]["name"]
                 description = tool["function"]["description"]
-                self.data["agent_template"]["messages"][0]["content"] += ("You have a function named {name} which is called whenever you say *{tag}*, you will only call it by {name}. This function will {description}.")
+                self.data["agent_template"]["messages"][0]["content"] += (" You have a function named {name} which is called whenever you say *{tag}*, you will only call it by {name}. This function will {description}. ")
 
     #handler function when agent is invoked
     def handle(self, content):
@@ -41,7 +41,6 @@ class Agent:
     #function dedicated to prompting ollama
     # I want to make this async at some point to improve response time.    
     def generate(self):
-    
         #print(self.data["agent_template"])
         response = {}
 

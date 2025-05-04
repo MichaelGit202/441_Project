@@ -63,7 +63,7 @@ def stream():
 
 def add_chat_message(msg):
     #print("INSIDE OF ADD_CHAT_MSG")
-    print(msg)
+    #print(msg)
     chat_history.append({'sender': msg[0], 'text': msg[1]})
 
 
@@ -71,7 +71,7 @@ def add_chat_message(msg):
 # the UI, I hate this
 @app.route('/get_chat_history')
 def get_chat_history():
-    print(chat_history)
+    #print(chat_history)
     return jsonify({'history': chat_history})
 
 
