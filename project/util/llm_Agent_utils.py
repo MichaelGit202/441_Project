@@ -25,7 +25,9 @@ ollama_seed = lambda x: int(str(int(hashlib.sha512(x.encode()).hexdigest(), 16))
 def split_response(text, tags):
     pattern = r"<([^>]+)>(.*?)</\1>"
     matches = re.findall(pattern, text, re.DOTALL)
-
+    print("spliting")
+    print(tags)
+    print(text)
     parsed = []
     for tag, content in matches:
         # if tag exists
@@ -50,7 +52,8 @@ def process_tags( dm_response, agents):
         # from out agent list, we parsed out an existing tag, now we are invoking the that tag's agent's handler function
         print("===========Tag============")
         print(tag)
-        response = agents[tag].handle([tag,content])
+        agents[tag].handle([tag,content])
+
         #print(response)
         #dm_response['message']['message']['content'] = replace_tags(tag, dm_response['message']['message']['content'], response['message']['message']['content'])
     
