@@ -48,11 +48,12 @@ def replace_tags(tag, dm_response, response):
 def process_tags( dm_response, agents):
     tags = split_response(dm_response['message']['message']['content'], agents.keys()) 
     print("=============Parsed Tags============")
+    print(tags)
     for tag, content in tags:
         # from out agent list, we parsed out an existing tag, now we are invoking the that tag's agent's handler function
         print("===========Tag============")
         print(tag)
-        agents[tag].handle([tag,content])
+        agents[tag].handle(["DM",content])
 
         #print(response)
         #dm_response['message']['message']['content'] = replace_tags(tag, dm_response['message']['message']['content'], response['message']['message']['content'])

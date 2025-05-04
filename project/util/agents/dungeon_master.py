@@ -1,5 +1,6 @@
 from .agent import Agent
 from ..game_state import GameState
+from ..IO import chatroom_output
 
 class dungeon_master(Agent):
     
