@@ -25,7 +25,9 @@ ollama_seed = lambda x: int(str(int(hashlib.sha512(x.encode()).hexdigest(), 16))
 def split_response(text, tags):
     pattern = r"<([^>]+)>(.*?)</\1>"
     matches = re.findall(pattern, text, re.DOTALL)
-
+    print("spliting")
+    print(tags)
+    print(text)
     parsed = []
     for tag, content in matches:
         # if tag exists
@@ -46,11 +48,13 @@ def replace_tags(tag, dm_response, response):
 def process_tags( dm_response, agents):
     tags = split_response(dm_response['message']['message']['content'], agents.keys()) 
     print("=============Parsed Tags============")
+    print(tags)
     for tag, content in tags:
         # from out agent list, we parsed out an existing tag, now we are invoking the that tag's agent's handler function
         print("===========Tag============")
         print(tag)
-        response = agents[tag].handle([tag,content])
+        agents[tag].handle(["DM",content])
+
         #print(response)
         #dm_response['message']['message']['content'] = replace_tags(tag, dm_response['message']['message']['content'], response['message']['message']['content'])
     
@@ -68,14 +72,14 @@ def process_tags( dm_response, agents):
 #note message is that tuple message thing where its [source agents tag, the message object it returned]
 #I dont like it either but we already this far
 def output_message(agents, agentsTags, message, IO):
-
     for tag in agentsTags:
         agents[tag].add_message(message)
     
     for output in IO:
-        output(message[1])
+        output(message)
 
-
+def input_message(IO):
+    return IO()
     
 
 
