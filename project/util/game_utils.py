@@ -17,8 +17,8 @@ import util.game_state as game_state
 def run_console_chat(seed, agents, **kwargs):
 
     while(True):
-        #dm_response = agents["DM"].generate()      # dungeon master generates a thing, commented when debugging
-        dm_response = debug_DM_response() 
+        dm_response = agents["DM"].generate()      # dungeon master generates a thing, commented when debugging
+        #dm_response = debug_DM_response() 
         #print("===========dungeon master response============")
         #print(dm_response['message']['message']['content'])
 

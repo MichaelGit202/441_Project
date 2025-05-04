@@ -7,10 +7,9 @@ def start_flask():
 
 if __name__ == '__main__':
     flask_thread = Thread(target=start_flask)
-    flask_thread.daemon = True  # Flask server will stop when main program exits
+    flask_thread.daemon = True  
     flask_thread.start()
 
-    # Now the rest of your code runs
     seed = '441_AI_Project'
     agents = prepare_game()
     run_console_chat(seed=seed, agents=agents)

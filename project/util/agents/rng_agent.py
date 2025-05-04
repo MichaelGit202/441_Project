@@ -50,13 +50,13 @@ class rng_agent(Agent):
 
         # Step 2: Get player input
         user_input = get_user_input()
-        user_msg = ["user", user_input]
-        self.add_message(user_msg)
+        
+        self.add_message(user_input)
 
         output_message(
             agents=self.agents,
             agentsTags=["RNGCall", tag[0]],
-            message=["user", user_msg],
+            message=["user", user_input],
             IO=[]
         )
 
