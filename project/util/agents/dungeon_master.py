@@ -16,10 +16,11 @@ class dungeon_master(Agent):
             tool_calls = {  
         #example rng_tag : rng_function
         }
-    
+            
+    #this is the weird part where i just want the dm to narrate but 
+    # still need a handle function lol
     def handle(self, tag):
-        self.add_message(tag)
-        return self.generate()
+        return tag
     
 
         

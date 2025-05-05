@@ -4,7 +4,7 @@ from .agents.trader_agent import trader_agent
 from .agents.battle import battle_agent
 from .agents.player_input import player_input
 from .agents.dialouge import dialogue_agent
-
+from .agents.game_state_parser import gamestate_parser
 
 #these are the things that go in <here><\here>
 agent_class_mapping = {
@@ -16,5 +16,6 @@ agent_class_mapping = {
     "battle" : battle_agent,
     "trader" : trader_agent,
     "player_input" : player_input,
-    "item" : simple_response_agent 
+    "item" : simple_response_agent ,
+    "GS" : gamestate_parser
 }

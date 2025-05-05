@@ -27,7 +27,7 @@ class GameState:
         ]   
 
     def update_health(self, amount):
-        self.health = max(0, min(self.max_health, self.health + amount))
+        self.health += amount
 
     def set_max_health(self, amount):
         self.max_health = max(1, amount)

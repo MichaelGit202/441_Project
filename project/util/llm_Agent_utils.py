@@ -30,7 +30,10 @@ def split_response(text, tags):
     print(text)
     parsed = []
     for tag, content in matches:
-        # if tag exists
+        #llm likes to use - and _ randomly, words cannot describe my frustration
+        tag = tag.replace("-", "_")
+
+         # if tag exists
         if tag in tags:
             parsed.append((tag, content.strip()))
         else:
@@ -78,9 +81,13 @@ def output_message(agents, agentsTags, message, IO):
     for output in IO:
         output(message)
 
+    #Update game state here, for every output
+    agents["GS"].handle(message)
+
 def input_message(IO):
     return IO()
     
+
 
 
 

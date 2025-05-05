@@ -3,25 +3,18 @@ from ..IO import cmd_output, chatroom_output
 from ..llm_agent_utils import output_message
 
 class Agent:
-    default_output = cmd_output
-
-    data = {
-        #everything from the json file
-    }
-    # I added this tool call thing for tool definitions in the json
-    tool_calls = {  
-        #example rng_tag : rng_function
-    }
-    agents = [] # list of all agents, this is by reference according to g4g
     
-
     def __init__(self, agent_info, game_state, agents):
+        self.default_output = cmd_output
         self.game_state = game_state
         self.agents = agents  
         self.data = agent_info
-        keys = agent_info.keys()
+        self.tool_calls = {  
+            #example rng_tag : rng_function
+        }
+        keys = agent_info["agent_template"].keys()
         if ("tools" in keys):
-            self.load_tools(agent_info["tools"])
+            self.load_tools(agent_info["agent_template"]["tools"])
 
 
     def load_tools(self,tools): 
@@ -60,6 +53,12 @@ class Agent:
             self.data["agent_template"]["messages"].append({"role" : "assistant", "content" : msg[1]})
         else:
             self.data["agent_template"]["messages"].append({"role" :"user", "content" : msg[1]})
+
+
+    def clear_message_history(self):
+        sys_prompt = self.data["agent_template"]["messages"][0]
+        self.data["agent_template"]["messages"] = []
+        self.data["agent_template"]["messages"].append(sys_prompt)
 
 
     #calls object in the form of
