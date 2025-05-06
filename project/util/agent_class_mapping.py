@@ -5,11 +5,13 @@ from .agents.battle import battle_agent
 from .agents.player_input import player_input
 from .agents.dialouge import dialogue_agent
 from .agents.game_state_parser import gamestate_parser
+from .agents.dungeon_master import dungeon_master
+from .agents.dungeon_master_speak import dungeon_master_speak
 
 #these are the things that go in <here><\here>
 agent_class_mapping = {
     "scene" : simple_response_agent,
-    "DM"    : simple_response_agent,
+    "DM"    : dungeon_master,
     "inventory" : simple_response_agent,
     "RNGCall" : rng_agent,
     "dialogue" : dialogue_agent,
@@ -17,5 +19,6 @@ agent_class_mapping = {
     "trader" : trader_agent,
     "player_input" : player_input,
     "item" : simple_response_agent ,
-    "GS" : gamestate_parser
+    "GS" : gamestate_parser,
+    "DM_Speak"  : dungeon_master_speak
 }

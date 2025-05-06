@@ -1,0 +1,2190 @@
+======================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================<scene> You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, ending in jagged rocks and twisted roots that seem to writhe like living serpents. A narrow path winds its way down the cliff's face, vanishing into the depths of the forest below.</scene>
+
+<DM> You've been traveling for days, following a cryptic map etched on a piece of parchment. The map seemed to point you towards this very spot, but you're not sure what lies at the bottom of the cliff or why it's so important.</DM>
+
+<inventory> Your backpack contains: 1 waterskin, 1 ration bar, 50 feet of hempen rope, and a small pouch containing 15 gold pieces. </inventory>
+
+<RNGCall>max=20</RNGCall>
+
+
+======================END=========================================START===================<scene> You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, plunging down into a deep chasm that seems to swallow all light and sound. A rickety wooden bridge stretches across the gap, creaking ominously in the breeze. To one side, a dense thicket of brambles and vines blocks your path, while to the other, a narrow dirt trail winds its way down into the depths of the chasm.</scene>
+
+<DM> As you look out over the edge, you notice that the bridge seems to be swaying more than usual, as if it's being buffeted by an unseen wind. You can't shake the feeling that something is off about this place...</DM>
+
+<inventory></inventory>
+
+<player_input>What do you do next?</player_input>
+
+
+======================END=========================================START===================<scene> You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, a rocky slope giving way to a deep chasm that seems to plunge into darkness. A rickety wooden bridge spans the gap, its weathered planks creaking ominously in the wind.</scene>
+
+<DM> You've been traveling for days, and this cliff is your only lead on finding the fabled Lost Temple of the Moon Goddess. Legend has it that the temple holds ancient secrets and treasures beyond your wildest dreams. But beware - you're not the only one searching for it...</DM>
+
+<inventory> Your backpack contains a waterskin, a few days' worth of rations, a map, and a small pouch containing 15 gold pieces.</inventory>
+
+<RNGCall>max=20</RNGCall>
+
+
+======================END=========================================START===================<scene> You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, ending in jagged rocks and twisted roots that seem to writhe like living serpents. To one side, a narrow path winds its way up the slope, vanishing into the trees above. To the other, the cliff plunges straight down, the air growing colder with each passing moment.</scene>
+
+<DM> You've been traveling for days, and this cliff seems to be the only place left to go. The map you have is torn and worn, but it suggests that there's something important at the bottom of this drop-off. What do you do?</DM>
+
+<player_input>
+
+
+======================END=========================================START===================<scene>
+You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, a tumble of rocks and boulders stretching down to the valley floor far, far below. A narrow path winds its way along the cliff's edge, disappearing into the distance.
+
+<DM>
+The locals have warned you about this place - said it was cursed, that anyone who ventured too close would never return. But you're not one to believe in superstitions...
+
+<inventory>
+
+</inventory>
+
+<RNGCall>max=20</RNGCall>
+
+<dialogue>
+"What do you make of this place?" a voice calls out from behind you.
+
+You turn to see a figure cloaked in shadows, standing at the edge of the cliff. Who - or what - is it?
+
+
+======================END=========================================START===================<scene> You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, plunging down into a dense forest that seems to swallow all light and sound. A narrow path winds its way along the cliff's edge, disappearing into the trees. To one side, a massive stone monument bears an ancient inscription, worn by time and weather. </scene>
+
+<DM> The locals have whispered of dark rituals performed on this very spot, where the veil between worlds is said to be at its thinnest. Some say that on certain nights, when the moon hangs low in the sky, you can still hear the whispers of those who have ventured too close to the void. </DM>
+
+<player_input> What would you like to do?
+
+
+======================END=========================================START===================<scene> You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, plunging down into a dense forest that seems to swallow all light and sound. A narrow path winds its way along the cliff's edge, disappearing into the trees. To one side, a massive stone monument stands sentinel, weathered by time and erosion. Its surface bears an ancient inscription, worn but still legible: "Beware the Shadow in the Trees".</scene>
+
+<DM> You sense that this place holds secrets and dangers beyond your wildest imagination. What will you do next?</DM>
+
+
+======================END=========================================START===================<scene> You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, a jagged line of rocks and scrubby bushes giving way to a deep chasm that seems to swallow all light. A narrow path winds its way down the side of the cliff, vanishing into the depths below.</scene>
+
+<DM> As you look out over the edge, you notice a figure standing at the far end of the chasm, silhouetted against the fading light of day. They seem to be waiting for something - or someone.</DM>
+
+<inventory> Your inventory remains unchanged: a worn leather tunic, a pair of sturdy boots, and a trusty short sword at your side.</inventory>
+
+<player_input> What do you do next?
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================describe_environment("A steep, rocky cliff towers above you, its face worn smooth by the relentless pounding of wind and rain. The air is crisp and clean, filled with the scent of damp earth and greenery. A narrow path winds its way up the cliff's side, disappearing into the mist that clings to the rocks.")
+
+
+======================END=========================================START===================describe_environment("a steep and rocky cliffside stretches out before you, with jagged boulders and twisted roots jutting out from the earth like skeletal fingers.")
+
+
+======================END=========================================START===================describe_environment("You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, a jagged line of rock and earth that seems to plunge into the depths of the earth itself. To one side, a tangle of scrubby bushes and twisted trees clings to the face of the cliff, their roots digging deep into the rocky soil as if seeking to anchor themselves against the wind's fierce pull.")
+
+
+======================END=========================================START===================describe_environment("You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, a jagged line of rock and earth that seems to plunge into the depths of the earth itself. To one side, a narrow path winds its way along the edge of the cliff, disappearing into the trees. To the other, the air is thin and cold, and you can see the faint outline of mountains rising up in the distance.")
+
+
+======================END=========================================START===================describe_environment("a steep, rocky cliff drops off into a deep chasm below, the air is thin and cold")
+
+
+======================END=========================================START===================describe_environment("You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, a jagged line of rocks and scrubby bushes giving way to a deep chasm that seems to swallow the sunlight whole.")
+
+
+======================END=========================================START===================describe_environment("a steep, rocky cliff drops off into a deep chasm below, the air is thin and the wind howls through the gap")
+
+
+======================END=========================================START===================describe_environment("A steep, rocky cliff stretches out before you, its surface worn smooth by countless seasons of wind and rain. The air is crisp and clean, filled with the scent of pine and earth. To your left, a dense forest clings to the base of the cliff, its trees twisted and gnarled with age. To your right, the cliff drops away precipitously, plunging into a deep chasm that seems to swallow all light."
+
+
+======================END=========================================START===================DescribeEnvironment("You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, a tangled web of roots and vines clinging to the rocky face for dear life. A narrow path winds its way down the side of the cliff, vanishing into the trees below.")
+
+
+======================END=========================================START=========================================START===================
+
+
+======================END=========================================START===================describe_environment("You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, a tangled web of roots and vines clinging to the rocky face for dear life. In the distance, you see a faint plume of smoke rising from a valley far below.")
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================describe_environment("As you take in the breathtaking view, your eyes are drawn to the source of the smoke. It appears to be coming from an ancient, ruined castle perched atop a craggy outcropping of rock. The once-majestic structure now lies in shambles, its stone walls cracked and worn by time and weather. A rickety wooden bridge spans the chasm between the cliff's edge and the castle's entrance, creaking ominously in the wind.")
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================describe_environment("The air is heavy with an eerie silence, broken only by the distant sound of crackling flames and the faint whisper of unknown voices carried on the wind. As you gaze up at the bridge, you notice that it appears to be swaying slightly, as if it's being buffeted by an unseen force. The wooden planks seem worn and weathered, with visible signs of rot and decay. A tattered banner flapping in the breeze bears a cryptic message: 'Turn back, traveler, while you still can.'")
+
+
+======================END=========================================START==================={"name":"dm",""parameters": {"prompt":"The air is heavy with an eerie silence, broken only by the distant sound of crackling flames and the faint whisper of unknown voices carried on the wind. As you gaze up at the bridge, you notice that it appears to be swaying slightly, as if it's being buffeted by an unseen force. The wooden planks seem worn and weathered, with visible signs of rot and decay. A tattered banner flapping in the breeze bears a cryptic message: "Turn back, traveler, while you still can.""}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The air is heavy with an eerie silence, broken only by the distant sound of crackling flames and the faint whisper of unknown voices carried on the wind. As you gaze up at the bridge, you notice that it appears to be swaying slightly, as if it's being buffeted by an unseen force. The wooden planks seem worn and weathered, with visible signs of rot and decay. A tattered banner flapping in the breeze bears a cryptic message: "Turn back, traveler, while you still can.""}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The air is heavy with an eerie silence, broken only by the distant sound of crackling flames and the faint whisper of unknown voices carried on the wind. As you gaze up at the bridge, you notice that it appears to be swaying slightly, as if it's being buffeted by an unseen force. The wooden planks seem worn and weathered, with visible signs of rot and decay. A tattered banner flapping in the breeze bears a cryptic message: "Turn back, traveler, while you still can.""}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The air is heavy with an eerie silence, broken only by the distant sound of crackling flames and the faint whisper of unknown voices carried on the wind. As you gaze up at the bridge, you notice that it appears to be swaying slightly, as if it's being buffeted by an unseen force. The wooden planks seem worn and weathered, with visible signs of rot and decay. A tattered banner flapping in the breeze bears a cryptic message: "Turn back, traveler, while you still can.""}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The air is heavy with an eerie silence, broken only by the distant sound of crackling flames and the faint whisper of unknown voices carried on the wind. As you gaze up at the bridge, you notice that it appears to be swaying slightly, as if it's being buffeted by an unseen force. The wooden planks seem worn and weathered, with visible signs of rot and decay. A tattered banner flapping in the breeze bears a cryptic message: "Turn back, traveler, while you still can.""}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The air is heavy with an eerie silence, broken only by the distant sound of crackling flames and the faint whisper of unknown voices carried on the wind. As you gaze up at the bridge, you notice that it appears to be swaying slightly, as if it's being buffeted by an unseen force. The wooden planks seem worn and weathered, with visible signs of rot and decay. A tattered banner flapping in the breeze bears a cryptic message: "Turn back, traveler, while you still can.""}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The air is heavy with an eerie silence, broken only by the distant sound of crackling flames and the faint whisper of unknown voices carried on the wind. As you gaze up at the bridge, you notice that it appears to be swaying slightly, as if it's being buffeted by an unseen force. The wooden planks seem worn and weathered, with visible signs of rot and decay. A tattered banner flapping in the breeze bears a cryptic message: "Turn back, traveler, while you still can.""}}
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The air is heavy with an eerie silence, broken only by the distant sound of crackling flames and the faint whisper of unknown voices carried on the wind. As you gaze up at the bridge, you notice that it appears to be swaying slightly, as if it's being buffeted by an unseen force. The wooden planks seem worn and weathered, with visible signs of rot and decay. A tattered banner flapping in the breeze bears a cryptic message: "Turn back, traveler, while you still can.""}}
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The air is heavy with an eerie silence, broken only by the distant sound of crackling flames and the faint whisper of unknown voices carried on the wind. As you gaze up at the bridge, you notice that it appears to be swaying slightly, as if it's being buffeted by an unseen force. The wooden planks seem worn and weathered, with visible signs of rot and decay. A tattered banner flapping in the breeze bears a cryptic message: "Turn back, traveler, while you still can.""}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The air is heavy with an eerie silence, broken only by the distant sound of crackling flames and the faint whisper of unknown voices carried on the wind. As you gaze up at the bridge, you notice that it appears to be swaying slightly, as if it's being buffeted by an unseen force. The wooden planks seem worn and weathered, with visible signs of rot and decay. A tattered banner flapping in the breeze bears a cryptic message: "Turn back, traveler, while you still can.""}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The air is heavy with an eerie silence, broken only by the distant sound of crackling flames and the faint whisper of unknown voices carried on the wind. As you gaze up at the bridge, you notice that it appears to be swaying slightly, as if it's being buffeted by an unseen force. The wooden planks seem worn and weathered, with visible signs of rot and decay. A tattered banner flapping in the breeze bears a cryptic message: "Turn back, traveler, while you still can.""}}
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge creaks ominously in the wind, its wooden planks groaning as if in protest. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge creaks ominously in the wind, its wooden planks groaning as if in protest. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge creaks ominously in the wind, its wooden planks groaning as if in protest. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge creaks ominously in the wind, its wooden planks groaning as if in protest. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"scene","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START==================={"name":"dm","parameters":{"prompt":"The bridge is old and worn, its wooden planks creaking ominously in the wind. The banner flapping in the breeze seems to be pulling your gaze towards it, the words "Turn back, traveler, while you still can" seeming to sear themselves into your mind."}}
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================describe_environment("You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, a jagged line of rock and earth that seems to plunge into the depths of the earth itself. To one side, a tangle of scrubby bushes and twisted trees clings to the rocky face, their roots digging deep into the stone as if seeking to anchor themselves against the wind's fierce pull.")
+
+describe_cliff("The cliff rises sharply from the ground, its surface worn smooth by countless seasons of rain and wind. In places, the rock is slick with moss and lichen, providing a treacherous footing for any who would dare to climb. Elsewhere, the stone is rough and unforgiving, offering little purchase for even the most sure-footed adventurer.")
+
+describe_weather("Above you, the sky is a deep, foreboding grey, with clouds that seem to swirl and twist in every direction. The air is cold and damp, filled with the scent of rain and the distant tang of ozone.")
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================You notice a figure standing at the edge of the cliff, partially hidden by the scrubby bushes and twisted trees. The figure is dressed in tattered robes, their face obscured by a hood that seems to be pulled down over their eyes. They appear to be gazing out at the same vast expanse below, their expression one of deep contemplation.
+
+The figure slowly turns towards you, their head cocked to one side as if sizing you up. You can't quite make out their features in the dim light, but there's something about them that seems... off. Perhaps it's the way they seem to be watching you with an unblinking gaze, or the way their very presence seems to draw the wind and darkness towards them like a magnet.
+
+The figure takes a slow step forward, their eyes never leaving yours. "You shouldn't be here," they say in a low, raspy voice that sends shivers down your spine. "This is not a place for mortals."
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================You stand at the edge of a precipitous cliff, the wind whipping your hair into a frenzy as you gaze out at the seemingly endless expanse below. The air is crisp and clean, with a hint of damp earth and moss. A thin mist rises from the valley floor, casting an ethereal gloom over the landscape.
+
+To your left, a tangle of dark green foliage clings to the rocky face of the cliff, as if attempting to anchor itself to the solid stone. The trees seem to lean in, their branches tangling together like skeletal fingers.
+
+Ahead of you, the cliff drops away precipitously, plunging into a deep chasm that stretches down into darkness. You can see the faint glint of water far below, but it's impossible to discern any features or landmarks.
+
+You notice a narrow path leading along the edge of the cliff, winding its way around the rocky outcroppings and treacherous drop-offs. The path appears worn and well-trodden, suggesting that many travelers have passed this way before you.
+
+What would you like to do?
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"What would you like to do?"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"What would you like to do?"}}
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Do you want to follow the path along the edge of the cliff, investigate the dark green foliage, or look for a way down into the chasm?"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Do you want to follow the path along the edge of the cliff, investigate the dark green foliage, or look for a way down into the chasm?"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Do you want to follow the path along the edge of the cliff, investigate the dark green foliage, or look for a way down into the chasm?"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Do you want to follow the path along the edge of the cliff, investigate the dark green foliage, or look for a way down into the chasm?"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Do you want to follow the path along the edge of the cliff, investigate the dark green foliage, or look for a way down into the chasm?"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Follow the path along the edge of the cliff"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Follow the path along the edge of the cliff"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Follow the path along the edge of the cliff"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Follow the path along the edge of the cliff"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Follow the path along the edge of the cliff"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Follow the path along the edge of the cliff"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Follow the path along the edge of the cliff"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Follow the path along the edge of the cliff"}}
+
+
+======================END=========================================START==================={"name":"scene",""parameters": {"prompt":"The narrow, winding path clings to the edge of the precipice, offering a treacherous balance between safety and disaster."}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"What would you like to do?"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"What would you like to do?"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"What would you like to do?"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path, or try to find a way to cross the chasm."}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt": "Take a step forward along the path"}}
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt": "Take a step forward along the path"}}
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================You stand at the edge of a precipitous cliff, the wind whipping your hair into a frenzy as you gaze out at the seemingly endless expanse below. The ground drops away steeply, a jagged line of rock and scrubby bushes that gives way to a deep, dark chasm. A rickety wooden bridge stretches across the gap, its planks creaking ominously in the wind.
+
+To your left, a narrow path winds its way down the cliffside, vanishing into the trees at the base. The air is thick with the scent of damp earth and decaying leaves, and you can hear the distant sound of running water.
+
+Ahead of you, the bridge stretches out across the chasm, its wooden slats worn smooth by countless feet. You can see the faint outline of a figure standing on the far side, shrouded in mist and shadow.
+
+What would you like to do?
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================You stand at the edge of a precipitous cliff, the wind whipping your hair into a frenzy as you gaze out at the seemingly endless expanse below. The ground drops away steeply, a jagged line of rock and earth that disappears into the depths of the valley far, far below.
+
+To your left, a narrow path winds its way along the edge of the cliff, vanishing into the mist that clings to the rocky face like a damp shroud. The air is thick with the scent of damp earth and decaying leaves, and you can hear the distant sound of running water, its gentle song echoing up from the depths below.
+
+To your right, the cliff rises sharply upwards, a sheer wall of rock that seems almost impenetrable. Vines and creepers cling to the surface, their tendrils snaking up towards the sky like grasping fingers. The sun beats down upon this rocky face, casting long shadows across the ground far below.
+
+You can see no signs of life anywhere along the cliff's edge, only an eerie silence that seems to press in around you like a physical presence. What would you like to do?
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"What would you like to do?"}}
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"What would you like to do?"}}
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================It seems like there's been a repetition error. Let me help you rephrase that.
+
+You stand at the edge of a steep cliff, the wind whipping your hair into a frenzy as you gaze out at the vast expanse below. The ground drops away precipitously, revealing a tangled web of roots and vines that seem to be grasping for purchase on the rocky face.
+
+A narrow path winds its way down the side of the cliff, disappearing into the depths below. To one side, a tangle of overgrown vegetation stretches up towards you, as if trying to reclaim the land for nature.
+
+Would you like me to add anything else or rephrase it in a different way?
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================It seems like you've generated a large amount of text that repeats the same sentence structure and phrase over and over again.
+
+To provide a more meaningful response, I'll try to summarize the main points:
+
+* You arrive at a cliff with a beautiful garden below.
+* The sound of rushing water grows louder as you look down into the valley.
+* A fast-moving stream babbles and chatters its way through the trees, creating a soothing background noise that is both calming and invigorating.
+
+If you'd like to provide more context or clarify what you're trying to communicate, I'd be happy to help further!
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START=================== What do you do?
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START=================== To one side, the cliff face rises up in a sheer wall of stone, covered in moss and ferns that cling tenaciously to the surface.
+
+To your left, you see a narrow path that winds its way down the cliffside, disappearing into the trees below. The path looks treacherous, with loose rocks and uneven footing that would be difficult to navigate without caution.
+
+Ahead of you, the cliff drops away even more steeply, plunging into a deep valley far below. You can see the glint of water in the distance, but it's impossible to tell what kind of landscape lies beneath.
+
+You notice that your backpack is secure on your shoulders, and you have a waterskin, a small pouch containing 10 gold pieces, and a short sword at your side. What do you do?
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START=================== Your stomach drops with the sudden loss of gravity.
+
+You manage to execute a decent landing roll, rolling with the impact to cushion your fall. The ground rushes up to meet you, and you feel a jolt of pain as your joints absorb the shock. You come to a stop, dazed and disoriented.
+
+As you struggle to sit up, you take stock of your surroundings. You're in a small clearing surrounded by dense foliage. A narrow stream runs through the center of the clearing, its crystal-clear waters reflecting the dappled sunlight filtering through the trees.
+
+You notice that you've landed near a large stone pedestal, partially hidden by the undergrowth. On top of the pedestal lies a leather-bound book, adorned with strange symbols and markings. The book seems to be emitting a faint hum, as if it's alive.
+
+Your injuries are minor, but you're shaken from your fall. You've got a few bruises and scrapes, but nothing that will keep you out of commission for long. Your gear is still secure on your person.
+
+You take a moment to catch your breath and assess the situation. The book seems to be the most pressing concern. What do you do?
+
+function call: describe_environment
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START=================== You decide to follow the river, seeing where it might lead.
+
+You stand up, brushing off your clothes and taking a moment to assess your surroundings. The clearing is small, but the trees seem to stretch on forever in both directions. The river winds its way through the undergrowth, disappearing into the distance.
+
+As you follow the river, you notice that the terrain becomes increasingly rugged. The ground rises up, and you have to navigate over roots and fallen branches. The air grows cooler and damper, and you can feel a mist rising from the water.
+
+The river begins to narrow, and you find yourself wading through shallow pools of water. You have to be careful not to slip on the smooth rocks, but the current is gentle, and you're able to make good progress.
+
+As you round a bend in the river, you see that it opens up into a small waterfall. The water cascades over a rocky ledge, creating a misty veil that rises into the air. Behind the falls, you see a small cave entrance, partially hidden by the foliage.
+
+You notice that your backpack is still secure on your shoulders, and you have a waterskin, a small pouch containing 10 gold pieces, and a short sword at your side. You're feeling a bit more refreshed after following the river, but you're not sure what dangers or opportunities lie ahead.
+
+function call: describe_environment
+
+You follow the river, noticing that the terrain becomes increasingly rugged. The ground rises up, and you have to navigate over roots and fallen branches. The air grows cooler and damper, and you can feel a mist rising from the water.
+
+The river begins to narrow, and you find yourself wading through shallow pools of water. You have to be careful not to slip on the smooth rocks, but the current is gentle, and you're able to make good progress.
+
+As you round a bend in the river, you see that it opens up into a small waterfall. The water cascades over a rocky ledge, creating a misty veil that rises into the air. Behind the falls, you see a small cave entrance, partially hidden by the foliage.
+
+You notice that your backpack is still secure on your shoulders, and you have a waterskin, a small pouch containing 10 gold pieces, and a short sword at your side. You're feeling a bit more refreshed after following the river, but you're not sure what dangers or opportunities lie ahead.
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START==================={"name":"DM_Speak",""prompt":"As you approach the village, the villagers turn to look at you. They seem curious, but also a bit wary. One of them steps forward, an elderly man with a bushy white beard, and says, ''Ah, a traveler. We don''t get many strangers here. What brings you to our village?''"}
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START==================={"name":"trader",""parameters":{}}
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START=================== Ahead of you, the cliff drops off sharply, with nothing but empty space between you and the ground far, far below.
+
+You notice that the path down into the valley is overgrown with weeds and vines, and it looks like no one has passed this way in a long time. The air is heavy with an eerie silence, as if the very land itself is holding its breath in anticipation of something. What do you do?
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START=================== Dazed and disoriented, you struggle to sit up, rubbing your head and assessing your injuries.
+
+You've taken a beating from the fall, but you seem to be okay. You're bruised and battered, but you don't appear to have any serious wounds. As you look around, you see that you've landed near a small stream, its crystal-clear waters babbling over smooth rocks. The air is cool and damp, and you can feel the mist from the cliff rising up around you.
+
+You notice that the path along the edge of the cliff has disappeared into the distance, but you also see a figure standing at the water's edge, watching you. It's a woman with long, flowing hair and a white dress that seems to glow in the fading light. She regards you calmly, her eyes seeming to bore into your very soul.
+
+What do you do?
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START=================== "Hello," you say, trying to sound calm despite the shock of your fall. The woman doesn't seem surprised by your greeting, but she does nod slightly, as if acknowledging a long-forgotten acquaintance.
+
+"Welcome," she says in a voice that's like music. "I've been waiting for you." Her eyes seem to gleam with an otherworldly light, and you feel a shiver run down your spine.
+
+The woman takes a step closer to the stream, her gaze fixed on the water. "You're not from around here, are you?" she asks, her voice low and mysterious.
+
+What do you do?
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START=================== You notice that the path along the edge of the cliff has disappeared into the distance, but you also see a figure standing at the water's edge, watching you.
+
+The woman takes a step closer to the stream, her gaze fixed on the water. "You're not from around here, are you?" she asks, her voice low and mysterious.
+
+Suddenly, a loud growling noise echoes through the air, making you both turn towards the sound. A massive bear emerges from the underbrush, its eyes fixed menacingly on you. The woman's expression remains calm, but you can sense a hint of surprise beneath her surface.
+
+The bear charges towards you, its claws swiping wildly at the air. You prepare to defend yourself, your heart racing with adrenaline.
+
+Combat begins!
+
+You are fighting a 1-headed bear (a rare and ferocious creature).
+
+Your current HP: 100
+
+Bear's current HP: 150
+
+What do you do?
+
+(Note: Please respond with an action, such as "Attack" or "Defend")
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================To your left, a massive stone monument stands sentinel, its surface etched with ancient runes that seem to shimmer in the fading light of day. The air is heavy with the scent of damp earth and decaying leaves, and you can feel the weight of centuries of history bearing down upon you.
+
+As the sun dips below the horizon, the sky erupts into a riot of color - deep oranges, fiery reds, and velvety purples - casting a warm glow over the landscape. But despite the beauty of the scene, you can't shake the feeling that you're being watched, that unblinking eyes are trained upon you from the shadows.
+
+What do you do?
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START=================== The wind rushes past your face, whipping your hair into a frenzy as you fall.
+
+Just as all hope seems lost, you feel a jolt of air resistance and your descent slows to a stop. You land with a thud on the soft earth, the impact sending shockwaves through your body. As you struggle to catch your breath, you realize that you've landed in a small clearing surrounded by dense foliage.
+
+The trees seem to close in around you, casting deep shadows that make it difficult to see. The air is thick with the scent of damp earth and decaying leaves, and you can feel the weight of the forest bearing down upon you.
+
+You look around, trying to get your bearings. You're not sure where you are or how far you've fallen. But as you scan the clearing, you notice a few things that catch your attention:
+
+* A small stream runs through the center of the clearing, its crystal clear waters reflecting the fading light of day.
+* A massive stone door lies at the far end of the clearing, partially hidden by the foliage.
+* You're not alone. You can hear the sound of rustling leaves and snapping twigs coming from just beyond the edge of the clearing.
+
+What do you do?
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Do you want to go into the water?"}}
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START==================={"name":"inventory",""parameters": {"prompt":"player wants to go into the water"}}
+
+
+======================END=========================================START=================== 
+
+You take a deep breath and step off the cliff, feeling the rush of the wind as you plummet towards the water below. Time seems to slow as you fall, and for a moment, you feel weightless, free.
+
+As you hit the water, it's like hitting a wall of liquid silk. The impact is cushioned by the water, and you feel yourself being pulled down into its depths. You swim downwards, feeling the pressure build in your ears, until you reach the bottom of the river.
+
+The water is icy cold, but it's also strangely refreshing. You can see fish darting through the rocks below, their scales shimmering in the dim light. The air is filled with the scent of damp earth and moss, and you feel a sense of peace wash over you.
+
+As you look around, you notice that the river seems to be flowing into a small cave, its entrance hidden behind a screen of tangled vegetation. The cave is dark and mysterious, and you can't help but wonder what secrets it might hold.
+
+What do you do?
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START==================={"name":"player_input",""parameters": {"prompt":"Do you want to walk into the cave?"}}
+
+
+======================END=========================================START=================== 
+
+You swim towards the entrance of the cave, pushing aside the tangled vegetation that hides its opening. As you emerge from the river, you find yourself in a small, dimly lit chamber. The air is stale and musty, filled with the scent of age and decay.
+
+The cave is narrow, with rough stone walls that seem to press in on you from all sides. A faint glow emanates from luminescent mushrooms growing on the walls, casting an eerie light over the space. You can see ancient carvings etched into the stone, depicting strange rituals and mysterious creatures.
+
+As you look around, you notice a small pool of water at the far end of the cave, its surface reflecting the glow of the mushrooms. The air is heavy with the scent of damp earth and mold, and you can feel the weight of centuries of history bearing down upon you.
+
+Suddenly, you hear the sound of dripping water echoing through the cave, followed by the faint rustling of unknown creatures in the darkness.
+
+What do you do?
+
+
+======================END=========================================START===================
+
+
+======================END===================

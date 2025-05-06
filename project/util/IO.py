@@ -11,7 +11,11 @@ def chatroom_output(msg):
 def get_user_input():
     with app.app_context():
         toggle_input()
-        resp = listen_for_input()
+        try:
+            resp = listen_for_input()
+        except:
+            print("listening for input failed")
+            
         toggle_input()
     return resp["text"]
 

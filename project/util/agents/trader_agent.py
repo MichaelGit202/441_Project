@@ -12,7 +12,10 @@ class trader_agent(Agent):
         self.game_state = game_state
         self.agents = agents  
 
-    def handle(self, tag):
+    def handle(self, args):
+        #this is here because of old jank:
+        tag = [args[0], args[1]["prompt"]]
+        
         output_message(
             agents=self.agents,
             agentsTags=["DM", tag[0]],
@@ -47,6 +50,7 @@ class trader_agent(Agent):
                     message=["trader", "Trade sequence complete."],
                     IO=[chatroom_output]
                 )
+                self.clear_message_history()
                 return response
 
             # Add assistant's message
@@ -57,10 +61,13 @@ class trader_agent(Agent):
 
 
             user_msg = get_user_input()
+            print(self.data["agent_template"]["messages"])
 
+            self.add_message(["user", user_msg])
             output_message(
                 agents=self.agents,
                 agentsTags=["DM", tag[0]],
                 message=["user", user_msg],
                 IO=[]
             )
+            

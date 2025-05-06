@@ -10,17 +10,16 @@ class Agent:
         self.agents = agents  
         self.data = agent_info
         self.tool_calls = {  
-            #example rng_tag : rng_function
+           # dont use this
         }
-        keys = agent_info["agent_template"].keys()
-        if ("tools" in keys):
-            self.load_tools(agent_info["agent_template"]["tools"])
+        #keys = agent_info["agent_template"].keys()
+        #if ("tools" in keys):
+        #    self.load_tools(agent_info["agent_template"]["tools"])
 
 
     def load_tools(self,tools): 
         for tool in tools:
             if(tool["type"] == "function"):
-                tag = tool["function"]["tool_tag"]
                 name = tool["function"]["name"]
                 description = tool["function"]["description"]
                 self.data["agent_template"]["messages"][0]["content"] += (" You have a function named {name} which is called whenever you say *{tag}*, you will only call it by {name}. This function will {description}. ")
@@ -49,10 +48,15 @@ class Agent:
         # to get these guys to talk to each other, we are going to add
         # prompts from other agents will be appended as a USER prompt
     
-        if(msg[0] == self.data["metadata"]["tag"]):
-            self.data["agent_template"]["messages"].append({"role" : "assistant", "content" : msg[1]})
-        else:
+        #if(msg[0] == self.data["metadata"]["tag"]):
+        #    self.data["agent_template"]["messages"].append({"role" : "assistant", "content" : msg[1]})
+        #else:
+        #    self.data["agent_template"]["messages"].append({"role" :"user", "content" : msg[1]})
+        if(msg[0] == "user"):
             self.data["agent_template"]["messages"].append({"role" :"user", "content" : msg[1]})
+        else:
+            self.data["agent_template"]["messages"].append({"role" : "assistant", "content" : msg[1]})
+            
 
 
     def clear_message_history(self):

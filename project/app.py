@@ -11,7 +11,7 @@ def start_flask():
 
 if __name__ == '__main__':
     print("Rag chunking started.")
-    setup()
+    #setup()
     print("Rag chunking complete.")
     flask_thread = Thread(target=start_flask)
     flask_thread.daemon = True  

@@ -48,6 +48,23 @@ def replace_tags(tag, dm_response, response):
     return re.sub(pattern, replacement, dm_response, flags=re.DOTALL)
 
 
+
+def proccess_tool_calls(calls, agents):
+    print("tool calls")
+    print(calls)
+    for call in calls:
+        name = call.function.name
+        args = call.function.arguments
+        
+        if name in agents:
+            agents[name].handle([name, args])
+        else:
+            print(f"Agent '{name}' not found.")
+
+        
+    
+
+
 def process_tags( dm_response, agents):
     tags = split_response(dm_response['message']['message']['content'], agents.keys()) 
     print("=============Parsed Tags============")
@@ -82,7 +99,7 @@ def output_message(agents, agentsTags, message, IO):
         output(message)
 
     #Update game state here, for every output
-    agents["GS"].handle(message)
+    #agents["GS"].handle(message)
 
 def input_message(IO):
     return IO()
