@@ -53,7 +53,10 @@ def prepare_game():
 
     tags_from_json = []
     #populate agents list
+
+    
     for agent_name in agent_list:
+
         with open("./agent_templates/" + agent_name, 'r') as file:     
             #print(agent_name)
             data = json.load(file)
