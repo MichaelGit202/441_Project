@@ -16,7 +16,21 @@
             "role": "system",
             "content": "Once the trade is fully agreed upon, YOU MUST END YOUR FINAL MESSAGE WITH THIS EXACT LINE ON ITS OWN LINE: TRADE(user traded items, total price)DONE — do NOT include this unless the trade is 100% complete."
           }
-        
+      ],
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "retrieve_context_tool",
+            "description": "Used to retrieve context from files containing data that may be relevant to users' questions.",
+            "parameters": {
+              "type": "object",
+              "properties": { 
+                "user_prompt": {"type" : "string"}
+              }
+            }
+          }
+        }
       ]
     }
   }

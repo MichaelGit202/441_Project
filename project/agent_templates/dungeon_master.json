@@ -18,8 +18,23 @@
       },
       {
         "role" : "user",
-        "content": "I enter the cave"
+        "content": "I'd like to trade with a trader from the nearby village. I walk up to him and he says 'you can buy this emerald for 100 coins'. You should use the trader tag."
 
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "retrieve_context_tool",
+          "description": "Used to retrieve context from files containing data that may be relevant to users' questions.",
+          "parameters": {
+            "type": "object",
+            "properties": { 
+              "user_prompt": {"type" : "string"}
+            }
+          }
+        }
       }
     ]
   }

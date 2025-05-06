@@ -41,8 +41,8 @@ import numpy as np
 
 # Utility imports
 import pandas as pd
-from util.llm_utils import run_console_chat, tool_tracker
-from util.llm_utils import TemplateChat
+from util.game_utils import run_console_chat
+#from ...util.llm_utils import TemplateChat
 
 collection = None
 
@@ -167,8 +167,7 @@ def generate_response(query: str, contexts: List[str], model: str = "mistral:lat
     # Create prompt with context
     context_text = "\n\n".join(contexts)
     
-    prompt = f"""You are a helpful tutor who is answering the questions of a student to aid in their studies.
-    Use the following information to answer the question.
+    prompt = f"""You are a DND agent who is doing it's best to follow the rules of DND. Use the question posed and use the context to make sure you don't break any of the rules of DND.
     
     Context:
     {context_text}
@@ -206,7 +205,6 @@ def display_results(query: str, contexts: List[str], response: str) -> None:
     print("="*80 + "\n")
 
 #NEW: Tool Call
-@tool_tracker
 def retrieve_context_tool(user_prompt: str) -> List[str]:
     """
     Tool-callable function for LLM to retrieve context using RAG pipeline.
@@ -215,6 +213,7 @@ def retrieve_context_tool(user_prompt: str) -> List[str]:
     Returns:
         List[str]: Relevant context strings from vector store.
     """
+    print("Rag occuring")
     # Initialize embedding function
     embedding_fn = OllamaEmbeddingFunction()
 
@@ -229,7 +228,6 @@ def retrieve_context_tool(user_prompt: str) -> List[str]:
 
     return str(result.get("documents", []))
 
-@tool_tracker
 def process_function_call(function_call):
     name = function_call.name
     args = function_call.arguments
@@ -257,7 +255,9 @@ def setup():
     llm_model = "llama3.2:latest"  # Change to your preferred LLM model
     
     # 1. Load documents
-    data_dir = "project/util/rag_documents"
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Directory of rag.py
+    data_dir = os.path.join(BASE_DIR, "rag_documents")
+    #data_dir = "project/util/rag_documents"
     documents = load_documents(data_dir)
     
     # 2. Chunk documents using ChromaDB chunker
