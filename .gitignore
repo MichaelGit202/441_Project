@@ -6,3 +6,4 @@
 
 #ignore pycache
 __pycache__/
+venvs

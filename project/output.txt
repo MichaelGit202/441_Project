@@ -154,7 +154,7 @@ I jump over a canyon</RNGCall>
 
 ======================END=========================================START===================<RNGCall> 
 
-As you stretch out your hand and grab for the dangling roots, they provide surprisingly sturdy support. Your fingers wrap around the rough bark, and you feel a surge of relief as you pull yourself up and over the edge of the canyon. The rush of wind in your face is exhilarating, but it's tempered by the knowledge that you're not out of danger yet – those roots could break at any moment!</RNGCall>
+As you stretch out your hand and grab for the dangling roots, they provide surprisingly sturdy support. Your fingers wrap around the rough bark, and you feel a surge of relief as you pull yourself up and over the edge of the canyon. The rush of wind in your face is exhilarating, but it's tempered by the knowledge that you're not out of danger yet ï¿½ those roots could break at any moment!</RNGCall>
 
 
 ======================END=========================================START===================<RNGCall> 
@@ -43337,6 +43337,634 @@ The old man's gaze lingers on you for a moment before he returns to his book, mu
 <DM>You push aside the curtain of vines and step into the cave, your eyes adjusting to the dim light. The sound of dripping water echoes through the cavern.</DM>
 <RNGCall>a faint rustling noise comes from deeper in the cave, max=15</RNGCall>
 <player_input>What do you do next?</player_input>
+
+
+======================END=========================================START===================<trader> Say these words exactly: TRADE(A shimmering emerald, total price: 150 gold)DONE </trader>
+
+
+======================END=========================================START===================<trader> Say these words exactly: TRADE(A shimmering emerald, total price: 150 gold)DONE </trader>
+
+
+======================END=========================================START===================<scene>A damp, narrow cave lit by glowing moss</scene>
+<DM>You push aside the curtain of vines and step into the darkness, your eyes slowly adjusting to the faint luminescence.</DM>
+
+<inventory>Backpack (with 5 days' worth of rations, a waterskin, and 10 feet of hemp rope), Short sword, Leather armor</inventory>
+
+<RNGCall>a bat swoops down from the ceiling, its high-pitched squeak echoing off the walls. Roll for initiative: 1d20 + 2 = ?</RNGCall>
+
+
+======================END=========================================START===================<scene>A damp, narrow cave lit by glowing moss</scene>
+<DM>You step into the darkness, your eyes slowly adjusting to the dim light. The air is musty and filled with the scent of decay.</DM>
+
+<RNGCall>Rolling for visibility... 14/20</RNGCall>
+
+<player_input>What do you see in front of you?</player_input>
+
+
+======================END=========================================START===================<scene>A faint, ethereal glow permeates the air as soft luminescent tendrils of moss cling to the walls, casting an otherworldly light upon the rocky terrain. The sound of dripping water echoes softly in the distance, a gentle patter that seems almost melodic amidst the stillness. The air is heavy with the scent of damp earth and decaying vegetation, a primordial aroma that speaks to the cave's age and neglect.</scene>
+
+<DM>As you wait for your eyes to adjust, you notice that the rustling noise has stopped, and an unsettling silence has fallen over the cave. You can't shake the feeling that you're being watched.</DM>
+
+<RNGCall>a faint scratching sound echoes through the darkness, max=18</RNGCall>
+
+<player_input>What do you see in front of you?</player_input>
+
+<scene>A small, crystalline formation juts out from the wall, reflecting the soft glow of the moss. The air around it seems to vibrate with a faint, otherworldly energy.</scene>
+
+<DM>The scratching sound grows louder, and you sense that whatever is making it is moving closer, its presence drawing nearer with each passing moment.</DM>
+
+
+======================END=========================================START===================<scene>A damp, narrow cave lit by glowing moss</scene>
+<DM>You push aside the curtain of vines and step into the darkness, your eyes slowly adjusting to the faint luminescence.</DM>
+<RNGCall>a bat swoops down from the ceiling, max=15</RNGCall>
+<player_input>What do you do next?</player_input>
+
+
+======================END=========================================START===================<scene>A damp, narrow cave lit by glowing moss</scene>
+<DM>You fumble for your torch and light it, casting flickering shadows on the walls.</DM>
+<RNGCall>a faint rustling noise echoes through the cavern, max=15</RNGCall>
+<player_input>What do you do next?</player_input>
+
+
+======================END=========================================START===================<scene>A bustling market square, villagers milling about</scene>
+<DM>The villager holds out an emerald, his eyes fixed expectantly on you</DM>
+<trader>What would you like to trade or purchase?</ trader>
+<player_input>How much are you willing to pay for the emerald?</player_input>
+
+
+======================END=========================================START===================<scene>A villager's face appears, a hint of surprise at your question</scene>
+<DM>The villager's eyes narrow slightly as he considers your offer</DM>
+<trader>No, I'm afraid it's non-negotiable. 100 coins is the price.</ trader>
+<player_input>Do you want to pay with coins or try to negotiate further?</player_input>
+
+
+======================END=========================================START===================<scene>A bustling market square, villagers milling about</scene>
+<DM>The villager eyes you expectantly, his hand resting on the emerald in question</DM>
+<trader>What would you like to trade or purchase?</ trader>
+<player_input>How much for the emerald?</player_input>
+
+
+======================END=========================================START===================<scene>A villager leans forward, a hint of curiosity in his voice as he responds to your inquiry about the emerald's price</scene>
+<DM>The villager's eyes narrow slightly, as if sizing you up before responding to your question</DM>
+<trader>No, I'm afraid it's 100 coins for that particular gemstone. It's a rare find from the depths of the nearby mountains.</ trader>
+<RNGCall>Rolling for merchant negotiation... RNG result: 14</RNGCall>
+<player_input>Do you want to try to negotiate further?</player_input>
+
+
+======================END=========================================START===================The villager's eyes sparkle with interest as he leans in closer, his voice taking on a conspiratorial tone. He glances around the market square, ensuring no one is listening in on your conversation.
+
+`The sun casts long shadows across the cobblestone streets, illuminating the vibrant colors of the surrounding stalls. The air is alive with the sounds of merchants calling out their wares, the clanging of pots and pans from nearby food stalls, and the lively chatter of the villagers as they go about their daily business.`
+
+The villager's eyes sparkle with interest as he leans in closer, his voice taking on a conspiratorial tone. He glances around the market square, ensuring no one is listening in on your conversation.
+
+`The sun casts long shadows across the cobblestone streets, illuminating the vibrant colors of the surrounding stalls. The air is alive with the sounds of merchants calling out their wares, the clanging of pots and pans from nearby food stalls, and the lively chatter of the villagers as they go about their daily business.`
+
+The villager's eyes narrow slightly, his expression unreadable as he awaits your response to his offer.
+
+`You can try to negotiate further, but be warned: the merchant is not one to be trifled with. He has a reputation for being fair, but also fiercely protective of his wares.`
+
+.
+
+<player_input>Do you want to try to negotiate further?</player_input>
+
+(Rolling for merchant negotiation... RNG result: 18)
+
+
+======================END=========================================START===================<scene>A bustling village market, with villagers haggling over goods</scene>
+<trader>Old Man Thorne: "You can buy this emerald for 100 coins," he says with a sly grin</trader>
+<player_input>How much are you willing to pay?</player_input>
+
+
+======================END=========================================START===================`The village market is quiet once more, the only sound the soft clinking of Old Man Thorne's pouch as he settles his earnings. The old man's eyes twinkle with amusement as he watches you walk away, a small smile playing on his lips.`
+
+`You continue on your journey, the emerald safely in hand. You can feel its weight and power coursing through you, a sense of good fortune settling over you like a warm blanket.`
+
+`As you leave the market behind, you notice a figure watching you from across the way. A hooded figure, dressed in dark leather armor, their face obscured by shadows. They seem to be studying you, their eyes gleaming with an otherworldly intensity.`
+
+`The air is filled with the sweet scent of blooming flowers, and the warm sun beats down upon your skin. You can hear the distant sound of a babbling brook, its gentle song a soothing balm for your weary soul.`
+
+`You come to a fork in the road, the path to the left winding through a dense forest, while the path to the right leads towards a bustling town. Which way will you go?`
+
+<player_input>Which direction do you choose?</player_input>
+
+
+======================END=========================================START===================<DM>The village market is quiet once more, the only sound the soft clinking of Old Man Thorne's pouch as he settles his earnings. The old man's eyes twinkle with amusement as he watches you walk away, a small smile playing on his lips.</DM>
+
+<scene>A dense forest lies to the left, its trees towering above the underbrush like sentinels. The air is cool and damp, filled with the scent of decaying leaves and the distant call of unseen birds.</scene>
+<trader>Old Man Thorne: "It's a rare one, you know. Said to bring good fortune to those who possess it."</trader>
+<player_input>Which direction do you choose?</player_input>
+
+`The forest seems to be watching you, its trees looming like specters in the fading light of day. You can feel the weight of the emerald's power coursing through you, a sense of excitement and trepidation building in your chest.`
+
+`As you stand at the fork in the road, you notice that the forest seems to be growing quieter, as if it is holding its breath in anticipation of what you will do next. The air is heavy with tension, and you can feel the hairs on the back of your neck standing on end.`
+
+`Suddenly, a faint rustling sound comes from the underbrush, followed by the soft padding of footsteps. It's hard to tell if it's coming from the forest or from behind you, but one thing is certain: whatever is making that noise is heading straight for you.`
+
+<DM>The rustling grows louder, and you can see a figure emerging from the trees. It's a young woman, dressed in leather armor and carrying a short sword at her side. Her eyes are fixed intently on you, and she seems to be sizing you up with a calculating gaze.</DM>
+
+<scene>A young woman emerges from the forest, her eyes fixed intently on you</scene>
+<trader>The young woman: "You look like someone who could use some help. Are you looking for a fight?"</trader>
+<player_input>What do you say to the young woman?</player_input>
+
+
+======================END=========================================START=================== <DM>The young woman's gaze lingers on yours, her eyes narrowing slightly as she takes in your appearance and demeanor.</DM>
+
+The air is heavy with tension as the young woman emerges from the forest, her eyes fixed intently on you. She seems to be sizing you up, her gaze lingering on every detail of your appearance. Her hand rests on the hilt of her sword, a subtle gesture that suggests she's ready for battle at a moment's notice.
+
+The rustling in the underbrush grows louder, and you can see the young woman's eyes flicker towards it, her expression unreadable. She seems to be waiting for something or someone, but you're not sure what.
+
+<scene>The young woman stands frozen, her eyes fixed intently on you</scene>
+<trader>The young woman: "You look like someone who could use some help. Are you looking for a fight?"</trader>
+<player_input>What do you say to the young woman?</player_input>
+
+`The young woman's words hang in the air, a challenge that seems to be waiting for your response. You can feel her eyes on you, weighing and measuring you like a piece of meat on a butcher's block.`
+
+`You take a deep breath, trying to think of a response that will defuse the tension. But as you look into the young woman's eyes, you realize that she's not going to be easily swayed. She's a fighter, through and through, and she's not going to back down without a fight.`
+
+`You consider your options, weighing the pros and cons of engaging with the young woman. Part of you wants to walk away, to leave her to her own devices. But another part of you is curious, eager to see what she'll do next.`
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
+
+
+======================END=========================================START===================
 
 
 ======================END===================

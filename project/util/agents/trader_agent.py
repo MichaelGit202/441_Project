@@ -2,6 +2,7 @@ import re
 from .agent import Agent
 from ..llm_agent_utils import output_message
 from ..IO import cmd_output, chatroom_output, get_user_input
+from ..image_creation import generateImage  # Import the image generator
 
 
 class trader_agent(Agent):
@@ -33,7 +34,13 @@ class trader_agent(Agent):
             )
 
             # Check if trade is done
-            if re.search(r"TRADE(.*)DONE", message_text, re.DOTALL):
+            print("MESSAGE TEXT \n\n"+message_text+"MESSAGE TEXT DONE\n\n")
+            trade_match = re.search(r"TRADE\((.*)\)DONE", message_text, re.DOTALL)
+            if trade_match:
+                trade_description = trade_match.group(1).strip()
+                print("Trade Description: "+trade_description)
+                generateImage(trade_description)  # Call image generator
+                
                 output_message(
                     agents=self.agents,
                     agentsTags=["DM", tag[0]],
