@@ -2,6 +2,13 @@
 
 # Project Report: 441 Final Project - Michael Penfield & Collin Hicks
 
+## How to run:
+- Navigate to the project directory
+- Run `app.py`
+- If prompted, install any dependencies using pip
+- The RAG database will need a little time to chunk and embed the documents. This may take a few moments.
+- Once you see the messages that indicate that the embedding has finished and the flask server has started up, navigate to http://127.0.0.1:5000/
+
 ## 1. Supported Scenarios (Base System Functionality)
 
 Our AI Dungeon Master system supports the following DnD scenarios:
