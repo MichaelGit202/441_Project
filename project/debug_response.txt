@@ -1,1 +1,1 @@
-<scene>I walk into an open lush field.</scene>
+<Trader>I'll give you 10 gold for your scroll. Deal?</Trader>

@@ -37,6 +37,19 @@
             "required": ["upper_bound"]
           }
         }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "retrieve_context_tool",
+          "description": "Used to retrieve context from files containing data that may be relevant to users' questions.",
+          "parameters": {
+            "type": "object",
+            "properties": { 
+              "user_prompt": {"type" : "string"}
+            }
+          }
+        }
       }
     ]
   }
