@@ -36,7 +36,7 @@ def listen_for_input():
         time.sleep(3)  # sleep so you don't burn CPU
         if len(chat_history) > last_message_count:
             new_message = chat_history[-1]
-            #print(f"User responded: {new_message}")
+            print(f"User responded: {new_message}")
             return new_message
 
 

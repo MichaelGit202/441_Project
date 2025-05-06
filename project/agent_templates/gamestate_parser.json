@@ -1,0 +1,309 @@
+{
+ "metadata": {
+   "agent_name": "gamestate_parser",
+   "tag": "GS"
+ },
+ "agent_template": {
+   "model": "llama3.2",
+   "options": {
+     "temperature": 0.0,
+     "max_tokens": 100
+   },
+   "messages": [
+    {
+      "role": "system",
+      "content": "You are a Game State Parser. Your role is to analyze the input, extract relevant information, and respond with **only** the appropriate tool calls to update the game state. You must not use dialogue, narrative, or any other form of communication. Only use tool calls such as tool(function_definition, parameters). Do not generate any text outside of these tool calls."
+    }
+  ],
+   "tools": [
+     {
+       "type": "function",
+       "function": {
+         "name": "rng",
+         "tool_tag": "RNGCall",
+         "function_definition": "rng",
+         "description": "Gets a random number between `min` and `upper_bound`. `min` is optional and defaults to 0.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "min": { "type": "int", "default": 0 },
+             "upper_bound": { "type": "int" }
+           },
+           "required": ["upper_bound"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "add_item",
+         "tool_tag": "inventory",
+         "function_definition": "add_item",
+         "description": "Adds an item to the player's inventory.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "item": { "type": "string" }
+           },
+           "required": ["item"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "remove_item",
+         "tool_tag": "inventory",
+         "function_definition": "remove_item",
+         "description": "Removes an item from the player's inventory.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "item": { "type": "string" }
+           },
+           "required": ["item"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "update_health",
+         "tool_tag": "DM",
+         "function_definition": "update_health",
+         "description": "Increases or decreases the player's health by the specified amount.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "amount": { "type": "int" }
+           },
+           "required": ["amount"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "set_max_health",
+         "tool_tag": "DM",
+         "function_definition": "set_max_health",
+         "description": "Sets the player's maximum health.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "amount": { "type": "int" }
+           },
+           "required": ["amount"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "gain_coins",
+         "tool_tag": "DM",
+         "function_definition": "gain_coins",
+         "description": "Adds coins to the player's wallet.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "amount": { "type": "int" }
+           },
+           "required": ["amount"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "spend_coins",
+         "tool_tag": "DM",
+         "function_definition": "spend_coins",
+         "description": "Subtracts coins from the player's wallet if they have enough.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "amount": { "type": "int" }
+           },
+           "required": ["amount"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "set_location",
+         "tool_tag": "DM",
+         "function_definition": "set_location",
+         "description": "Updates the player's current location.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "location": { "type": "string" }
+           },
+           "required": ["location"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "add_flag",
+         "tool_tag": "DM",
+         "function_definition": "add_flag",
+         "description": "Adds a plot flag to the game state.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "flag": { "type": "string" }
+           },
+           "required": ["flag"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "remove_flag",
+         "tool_tag": "DM",
+         "function_definition": "remove_flag",
+         "description": "Removes a plot flag from the game state.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "flag": { "type": "string" }
+           },
+           "required": ["flag"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "add_party_member",
+         "tool_tag": "DM",
+         "function_definition": "add_party_member",
+         "description": "Adds a character to the player's party.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "member": { "type": "string" }
+           },
+           "required": ["member"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "remove_party_member",
+         "tool_tag": "DM",
+         "function_definition": "remove_party_member",
+         "description": "Removes a character from the player's party.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "member": { "type": "string" }
+           },
+           "required": ["member"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "add_quest",
+         "tool_tag": "DM",
+         "function_definition": "add_quest",
+         "description": "Adds a quest to the active quest log.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "quest": { "type": "string" }
+           },
+           "required": ["quest"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "complete_quest",
+         "tool_tag": "DM",
+         "function_definition": "complete_quest",
+         "description": "Marks a quest as completed and removes it from the active list.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "quest": { "type": "string" }
+           },
+           "required": ["quest"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "add_log",
+         "tool_tag": "DM",
+         "function_definition": "add_log",
+         "description": "Adds an event to the game log.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "event": { "type": "string" }
+           },
+           "required": ["event"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "advance_turn",
+         "tool_tag": "DM",
+         "function_definition": "advance_turn",
+         "description": "Advances the game state by one turn.",
+         "parameters": {
+           "type": "object",
+           "properties": {}
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "set_fact",
+         "tool_tag": "DM",
+         "function_definition": "set_fact",
+         "description": "Sets or updates a custom fact in the game state.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "key": { "type": "string" },
+             "value": { "type": "string" }
+           },
+           "required": ["key", "value"]
+         }
+       }
+     },
+     {
+       "type": "function",
+       "function": {
+         "name": "remove_fact",
+         "tool_tag": "DM",
+         "function_definition": "remove_fact",
+         "description": "Removes a custom fact from the game state.",
+         "parameters": {
+           "type": "object",
+           "properties": {
+             "key": { "type": "string" }
+           },
+           "required": ["key"]
+         }
+       }
+     }
+   ]
+ }
+}
+    

@@ -20,11 +20,13 @@ class rng_agent(Agent):
 #TODO, change the name of 'tag' because it makes no sense
 # tag is a "[tag, message]" tuple
 # this handle function is a complete mess btw
-    def handle(self, tag):
-
+    def handle(self, args):
+        #this is here because of old jank:
+        tag = [args[0], args[1]["prompt"]]
+        
         #TODO implement a method for figuring out who called the thing
         # this could be important for tying rng agent to something like battle agent
-        caller = self.parse_caller(tag)
+        #caller = self.parse_caller(tag)
 
         #IDK why its coming ad ["rngcall", tag content]
         formatted_tag = ["DM", tag[1]]
@@ -62,11 +64,15 @@ class rng_agent(Agent):
 
 
         # Step 3: Perform RNG and interpret result
-        upper = self.parse_upper_bound(tag[1])
+       
+        
+        try:
+            upper = tag[1].upper_bound
+        except:
+            upper = 100
+            
         rng_value = self.rng(upper)
         rng_msg = f"(Rolling a d{upper}... You rolled a {rng_value})"
-
-        
 
         rng_result_msg = ["RNGCall", rng_msg]
         self.add_message(rng_result_msg)
@@ -89,6 +95,8 @@ class rng_agent(Agent):
             message=["RNGCall",final_response["message"]["message"]["content"]],
             IO=[chatroom_output]
         )
+
+        self.clear_message_history()
         return final_response
 
     def parse_upper_bound(self, tag_content):

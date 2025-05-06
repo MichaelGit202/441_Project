@@ -30,7 +30,10 @@ def split_response(text, tags):
     print(text)
     parsed = []
     for tag, content in matches:
-        # if tag exists
+        #llm likes to use - and _ randomly, words cannot describe my frustration
+        tag = tag.replace("-", "_")
+
+         # if tag exists
         if tag in tags:
             parsed.append((tag, content.strip()))
         else:
@@ -43,6 +46,23 @@ def replace_tags(tag, dm_response, response):
     pattern = rf"<{tag}>(.*?)</{tag}>"
     replacement = f"<{tag}>{response}</{tag}>"
     return re.sub(pattern, replacement, dm_response, flags=re.DOTALL)
+
+
+
+def proccess_tool_calls(calls, agents):
+    print("tool calls")
+    print(calls)
+    for call in calls:
+        name = call.function.name
+        args = call.function.arguments
+        
+        if name in agents:
+            agents[name].handle([name, args])
+        else:
+            print(f"Agent '{name}' not found.")
+
+        
+    
 
 
 def process_tags( dm_response, agents):
@@ -78,9 +98,13 @@ def output_message(agents, agentsTags, message, IO):
     for output in IO:
         output(message)
 
+    #Update game state here, for every output
+    #agents["GS"].handle(message)
+
 def input_message(IO):
     return IO()
     
+
 
 
 

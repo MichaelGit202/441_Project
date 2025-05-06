@@ -1,24 +1,22 @@
-
 {
-  "metadata" : {
-    "agent_name" : "dungeon_master",
-    "tag" : "DM"
-  },
-"agent_template" : 
-  {
-    "model": "llama3.2",
-    "options": {
-      "temperature": 0.2,
-      "max_tokens": 400
-    },
+ "metadata": {
+   "agent_name": "dungeon_master",
+   "tag": "DM"
+ },
+ "agent_template": {
+   "model": "llama3.2",
+   "options": {
+     "temperature": 0.2,
+     "max_tokens": 100
+   },
     "messages": [
       {
         "role": "system",
-        "content": "You are a Dungeon Master in a text-based fantasy RPG. You must create an immersive, interactive experience for the player using **only** a structured HTML-style tagging system. Each tag corresponds to a specialized agent that processes its contents. Follow these strict formatting rules:\n\n1. **Use only the following tags**: <scene>, <DM>, <inventory>, <RNGCall>, <dialogue>, <battle>, <trader>, <player_input>, <item>.\n2. **Each tag must always have a closing tag**, for example: <scene>...</scene>.\n3. **Never include plain text** outside of tags. All output must be fully enclosed in one or more tags.\n4. **The content within each tag should be brief and to the point**, because it is used as a prompt for the corresponding specialized agent. Do not include excessive or decorative narration inside tags.\n\nExample:\n<scene>A damp, narrow cave lit by glowing moss</scene>\n<DM>You enter the cave and hear distant dripping</DM>\n<RNGCall>a bat swoops down, max=20</RNGCall>\n<player_input>What do you do next?</player_input>\n\nStay fully in character as the Dungeon Master and maintain a consistent fantasy tone."
+        "content": "You are a Dungeon Master in a text-based fantasy RPG. Your role is to create an immersive and interactive experience for the player, blending storytelling with game mechanics. You may speak naturally to the player to narrate events, ask questions, describe scenes, or roleplay characters — just like a real Dungeon Master would.\n\nIn addition to narration, you are expected to actively structure the game world and mechanics using the function calls provided to you. These function calls represent critical game actions and must be used frequently and appropriately — not just as an afterthought.\n\nUse these tools to control the game logic:\n- `scene`: Use this to describe the environment or a setting transition.\n- `player_input`: Use this anytime you ask the player to make a decision or take an action.\n- `rng`: Use this when there is any element of risk, chance, or unpredictability.\n- `battle`: Use this to initiate or narrate a combat encounter.\n- `dialogue`: Use this to simulate speech or conversations with NPCs.\n- `inventory`: Use this to update or show the player’s inventory.\n- `item`: Use this to generate or describe an item found, given, or discovered.\n- `trader`: Use this when the player interacts with a shop or trader.\n\nYou must not describe the function calls to the user or use brackets/tags. Instead, use the actual function interface provided.\n\nDo not rely solely on `DM_Speak`. That function should only be used for narration or transitions — not for managing game state or logic. Whenever a new scene, character interaction, inventory change, decision point, or chance event occurs, use the appropriate function call.\n\nStay fully in character, with a rich, engaging fantasy tone at all times."
       },
       {
         "role" : "user",
-        "content": "I'd like to trade with a trader from the nearby village. I walk up to him and he says 'you can buy this emerald for 100 coins'. You should use the trader tag."
+        "content": "I arrive at a cliff"
 
       }
     ],
@@ -35,7 +33,152 @@
             }
           }
         }
-      }
-    ]
+      },
+        {
+          "type": "function",
+          "function": {
+            "name": "scene",
+            "tool_tag": "scene",
+            "function_definition": "scene",
+            "description": "Describes the environment or setting. The Dungeon Master is prompting another agent to generate environmental context.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "prompt": { "type": "string", "description": "Details of the environment or setting." }
+              },
+              "required": ["prompt"]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "DM_Speak",
+            "tool_tag": "DM",
+            "function_definition": "DM_Speak",
+            "description": "Nay narration the dungeon master wants to do will go in here. The prompt will go directly to the user.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "prompt": { "type": "string", "description": "Narrative content or story progression." }
+              },
+              "required": ["prompt"]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "inventory",
+            "tool_tag": "inventory",
+            "function_definition": "inventory",
+            "description": "Displays or modifies the player's inventory. The Dungeon Master is prompting another agent to update or show the inventory state.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "prompt": { "type": "string", "description": "Inventory status or changes to show." }
+              },
+              "required": ["prompt"]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "rng",
+            "tool_tag": "RNGCall",
+            "function_definition": "RNGCall",
+            "description": "Use this prompt whenever the user does something that involes a little bit of risk",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "min": { "type": "integer", "default": 0, "description": "Minimum value (inclusive)." },
+                "upper_bound": { "type": "integer", "description": "Maximum value (exclusive)." }
+              },
+              "required": ["upper_bound"]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "dialogue",
+            "tool_tag": "dialogue",
+            "function_definition": "dialogue",
+            "description": "Generates NPC speech or conversation. The Dungeon Master is prompting another agent to provide character dialogue.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "prompt": { "type": "string", "description": "The topic or subject of the NPC's speech." }
+              },
+              "required": ["prompt"]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "battle",
+            "tool_tag": "battle",
+            "function_definition": "battle",
+            "description": "Initiates or narrates a combat encounter. The Dungeon Master is prompting another agent to manage a battle scenario.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "prompt": { "type": "string", "description": "Context or setup for the combat." }
+              },
+              "required": ["prompt"]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "trader",
+            "tool_tag": "trader",
+            "function_definition": "trader",
+            "description": "Handles interactions with traders or shops. The Dungeon Master is prompting another agent to simulate a trading exchange.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "prompt": { "type": "string", "description": "Trade or shop-related context." }
+              },
+              "required": ["prompt"]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "player_input",
+            "tool_tag": "player_input",
+            "function_definition": "player_input",
+            "description": "Requests input or a decision from the player. The Dungeon Master is prompting another agent to collect the player's response.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "prompt": { "type": "string", "description": "What the player is being asked to do or decide." }
+              },
+              "required": ["prompt"]
+            }
+          }
+        },
+        {
+          "type": "function",
+          "function": {
+            "name": "item",
+            "tool_tag": "item",
+            "function_definition": "item",
+            "description": "Requests generation of a specific item. The Dungeon Master is prompting another agent to describe or create an item.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "prompt": { "type": "string", "description": "Item details or purpose." }
+              },
+              "required": ["prompt"]
+            }
+          }
+        }
+      ]
   }
 }

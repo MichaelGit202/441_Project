@@ -3,31 +3,23 @@ from ..IO import cmd_output, chatroom_output
 from ..llm_agent_utils import output_message
 
 class Agent:
-    default_output = cmd_output
-
-    data = {
-        #everything from the json file
-    }
-    # I added this tool call thing for tool definitions in the json
-    tool_calls = {  
-        #example rng_tag : rng_function
-    }
-    agents = [] # list of all agents, this is by reference according to g4g
     
-
     def __init__(self, agent_info, game_state, agents):
+        self.default_output = cmd_output
         self.game_state = game_state
         self.agents = agents  
         self.data = agent_info
-        keys = agent_info.keys()
-        if ("tools" in keys):
-            self.load_tools(agent_info["tools"])
+        self.tool_calls = {  
+           # dont use this
+        }
+        #keys = agent_info["agent_template"].keys()
+        #if ("tools" in keys):
+        #    self.load_tools(agent_info["agent_template"]["tools"])
 
 
     def load_tools(self,tools): 
         for tool in tools:
             if(tool["type"] == "function"):
-                tag = tool["function"]["tool_tag"]
                 name = tool["function"]["name"]
                 description = tool["function"]["description"]
                 self.data["agent_template"]["messages"][0]["content"] += (" You have a function named {name} which is called whenever you say *{tag}*, you will only call it by {name}. This function will {description}. ")
@@ -56,10 +48,21 @@ class Agent:
         # to get these guys to talk to each other, we are going to add
         # prompts from other agents will be appended as a USER prompt
     
-        if(msg[0] == self.data["metadata"]["tag"]):
-            self.data["agent_template"]["messages"].append({"role" : "assistant", "content" : msg[1]})
-        else:
+        #if(msg[0] == self.data["metadata"]["tag"]):
+        #    self.data["agent_template"]["messages"].append({"role" : "assistant", "content" : msg[1]})
+        #else:
+        #    self.data["agent_template"]["messages"].append({"role" :"user", "content" : msg[1]})
+        if(msg[0] == "user"):
             self.data["agent_template"]["messages"].append({"role" :"user", "content" : msg[1]})
+        else:
+            self.data["agent_template"]["messages"].append({"role" : "assistant", "content" : msg[1]})
+            
+
+
+    def clear_message_history(self):
+        sys_prompt = self.data["agent_template"]["messages"][0]
+        self.data["agent_template"]["messages"] = []
+        self.data["agent_template"]["messages"].append(sys_prompt)
 
 
     #calls object in the form of

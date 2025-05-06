@@ -1,1 +1,1 @@
-<Trader>I'll give you 10 gold for your scroll. Deal?</Trader>
+<RNGCall>I'll give you 10 gold for your scroll. Deal?</RNGCall>

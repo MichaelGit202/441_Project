@@ -14,7 +14,10 @@ class battle_agent(Agent):
         self.game_state = game_state
         self.agents = agents  
 
-    def handle(self, tag):
+    def handle(self, args):
+        #this is here because of old jank:
+        tag = [args[0], args[1]["prompt"]]
+
         # Send initial battle message to the DM
         output_message(
             agents=self.agents,
@@ -62,7 +65,7 @@ class battle_agent(Agent):
                 agents=self.agents,
                 agentsTags=["DM", tag[0]],
                 message=["user", user_msg],
-                IO=[chatroom_output]
+                IO=[]
             )
 
             
