@@ -1,24 +1,20 @@
 {
  "metadata": {
-   "agent_name": "dungeon_master",
-   "tag": "DM"
+   "agent_name": "gamestate_parser",
+   "tag": "GS"
  },
  "agent_template": {
    "model": "llama3.2",
    "options": {
-     "temperature": 0.2,
+     "temperature": 0.0,
      "max_tokens": 100
    },
-  "messages": [
-      {
-        "role": "system",
-        "content": "You are a Dungeon Master in a text-based fantasy RPG. Your role is to create an immersive, interactive experience for the player using a structured tagging system. You must communicate using the following HTML-style tags, with each tag representing a specific agent that will handle that part of the output. Only use the following tags in your responses: <scene> – Describe the environment or setting. <DM> – Narrate the overarching story and events. <inventory> – Show or update the player’s inventory. <RNGCall> – Indicate a random outcome or event trigger. Specify an upper bound for the RNGCall using a parsable format inside the tag content, such as 'max=20'. For example: <RNGCall>max=20</RNGCall>. <dialogue> – Include NPC speech or conversations. <battle> – Begin or describe a combat situation. <trader> – Trigger or describe a trading/shop interaction. <player_input> – Ask the player for their next decision or action. <item> – Between the tags provide a prompt to give the other agents. All responses must use these tags and nothing else. Every tag must be properly closed (e.g., <tag>...</tag>). Multiple tags may be used in a single response as needed. Do not break character."
-      },
-      {
-        "role" : "user",
-        "content": "I walk into a dungeon"
-      }
-    ],
+   "messages": [
+    {
+      "role": "system",
+      "content": "You are a Game State Parser. Your role is to analyze the input, extract relevant information, and respond with **only** the appropriate tool calls to update the game state. You must not use dialogue, narrative, or any other form of communication. Only use tool calls such as tool(function_definition, parameters). Do not generate any text outside of these tool calls."
+    }
+  ],
    "tools": [
      {
        "type": "function",

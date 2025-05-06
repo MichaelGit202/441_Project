@@ -1,1 +1,1 @@
-<dialogue>You approach a a dodgy looking fellow at a bar.</dialogue>
+<scene>I walk into an open lush field.</scene>
