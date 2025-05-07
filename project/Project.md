@@ -9,6 +9,16 @@
 - The RAG database will need a little time to chunk and embed the documents. This may take a few moments.
 - Once you see the messages that indicate that the embedding has finished and the flask server has started up, navigate to http://127.0.0.1:5000/
 
+## reccomended code to look at:
+- game_utils.py, Main loop is in there: run_console_chat
+- 441_Project/project/util/llm_agent_utils.py :
+	- output_message: link between backend and flask
+   	- proccess_toolcalls: proccesses tool calls
+- 441_Project/project/util/agents/: all of the agent logic and the agent base class
+- 441_Project/project/agent_templates: all of the agent templates
+- IO.py and Flask_utils.py are what drives flask
+
+
 ## 1. Supported Scenarios (Base System Functionality)
 
 Our AI Dungeon Master system supports the following DnD scenarios:
