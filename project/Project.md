@@ -14,7 +14,9 @@
 Our AI Dungeon Master system supports the following DnD scenarios:
 
 - **Social Encounters**: Dynamic dialogue with diverse NPCs, personality-driven responses. It does this by using the main design characteristics:
-	- Prompt Engineering (2) - The dialog (and dungeon master) agents have prompts which enable encounters with NPCs. Each time a new dialogue starts, the dialogue agent has a potentially new personality, and a new experience with the user.
+	- Prompt Engineering (2) - The dialog (and dungeon master) agents have prompts which enable encounters with NPCs. Each time a new dialogue starts, the dialogue agent has a potentially new
+	- Modular design (7) - Dialouge scenarios can turn into battle scenarios if conversations turn sour
+ - personality, and a new experience with the user.
 	- Planning & Reasoning (4) - The dungeon master is aware of the context, and provides and gets context from the dialogue agents.
 	- Retrieval-Augmented Generation (5) - When needed the dialogue and dungeon master agents grab rules from DND5e to make sure that the interactions follow normal DND gameplay.
 - **Dungeon/World Exploration**: Procedural generation of rooms with descriptions, traps, and items. It does this by using the main design characteristics:
