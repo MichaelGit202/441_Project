@@ -1,3 +1,4 @@
+# This class keep track of all the stats about the game
 class GameState:
     def __init__(self):
         self.inventory = []

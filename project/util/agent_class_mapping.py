@@ -8,7 +8,7 @@ from .agents.game_state_parser import gamestate_parser
 from .agents.dungeon_master import dungeon_master
 from .agents.dungeon_master_speak import dungeon_master_speak
 
-#these are the things that go in <here><\here>
+#this is how we map tool calls to the correct agent
 agent_class_mapping = {
     "scene" : simple_response_agent,
     "DM"    : dungeon_master,

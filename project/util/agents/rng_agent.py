@@ -1,6 +1,6 @@
 from .agent import Agent
 import random
-import re  # regex >:(
+import re
 from ..llm_agent_utils import output_message
 from ..IO import cmd_output, get_user_input, chatroom_output
 
@@ -17,24 +17,19 @@ class rng_agent(Agent):
             "RNGCALL": self.rng,
         }
 
-#TODO, change the name of 'tag' because it makes no sense
-# tag is a "[tag, message]" tuple
-# this handle function is a complete mess btw
     def handle(self, args):
-        #this is here because of old jank:
-        tag = [args[0], args[1]["prompt"]]
-        
-        #TODO implement a method for figuring out who called the thing
-        # this could be important for tying rng agent to something like battle agent
-        #caller = self.parse_caller(tag)
+        """
+        Handles an RNG tool call by prompting the player, simulating a roll, and 
+        outputting the result with optional narrative generation.
+        """
+        tag = [args[0], args[1]["prompt"]]  # ["tag name", "prompt content"]
 
-        #IDK why its coming ad ["rngcall", tag content]
         formatted_tag = ["DM", tag[1]]
-        # Step 1: Ask the player what they want to do
-   
+
+        # Step 1: Output the DM prompt to the player
         output_message(
             agents=self.agents,
-            agentsTags=["DM", tag[0]], #caller goes here if exists
+            agentsTags=["DM", tag[0]],
             message=formatted_tag,
             IO=[chatroom_output]
         )
@@ -42,7 +37,7 @@ class rng_agent(Agent):
         self.add_message(tag)
         prompt = self.generate()
 
-        # Step 1.5: Output DM's prompt to the player
+        # Step 1.5: Output the generated message
         output_message(
             agents=self.agents,
             agentsTags=["DM", tag[0]],
@@ -50,9 +45,8 @@ class rng_agent(Agent):
             IO=[chatroom_output]
         )
 
-        # Step 2: Get player input
+        # Step 2: Get player input and store it
         user_input = get_user_input()
-        
         self.add_message(user_input)
 
         output_message(
@@ -62,21 +56,18 @@ class rng_agent(Agent):
             IO=[]
         )
 
-
-        # Step 3: Perform RNG and interpret result
-       
-        
+        # Step 3: Perform RNG roll
         try:
             upper = tag[1].upper_bound
         except:
             upper = 100
-            
+
         rng_value = self.rng(upper)
         rng_msg = f"(Rolling a d{upper}... You rolled a {rng_value})"
 
         rng_result_msg = ["RNGCall", rng_msg]
         self.add_message(rng_result_msg)
-       
+
         output_message(
             agents=self.agents,
             agentsTags=["DM", tag[0]],
@@ -84,15 +75,14 @@ class rng_agent(Agent):
             IO=[chatroom_output]
         )
 
-        # Step 4: Final interpretation
+        # Step 4: Generate a final response based on all prior context
         final_response = self.generate()
-
         print(final_response)
 
         output_message(
             agents=self.agents,
             agentsTags=["DM", tag[0]],
-            message=["RNGCall",final_response["message"]["message"]["content"]],
+            message=["RNGCall", final_response["message"]["message"]["content"]],
             IO=[chatroom_output]
         )
 
@@ -100,10 +90,17 @@ class rng_agent(Agent):
         return final_response
 
     def parse_upper_bound(self, tag_content):
+        """
+        Parses an upper bound from tag content using regex (e.g. 'max=20').
+        Defaults to 100 if not specified.
+        """
         match = re.search(r'max\s*=\s*(\d+)', tag_content)
         if match:
             return int(match.group(1))
-        return 100  # default upper bound
+        return 100
 
     def rng(self, upper_bound):
+        """
+        Rolls a random number between 1 and the given upper bound.
+        """
         return random.randint(1, upper_bound)

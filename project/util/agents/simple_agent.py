@@ -6,7 +6,6 @@ class simple_response_agent(Agent):
     
     def handle(self, args): 
         #this is here because of old jank:
-        print(args[0] + " triggered from SRA")
         tag = [args[0], args[1]["prompt"]]
 
         output_message(
@@ -16,8 +15,7 @@ class simple_response_agent(Agent):
             IO=[chatroom_output]
         )
 
-        print("cha")
-        
+       
         msg = self.generate()
         output_message(
             agents=self.agents,

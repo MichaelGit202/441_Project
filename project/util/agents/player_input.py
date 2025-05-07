@@ -2,7 +2,8 @@ from .agent import Agent
 from ..IO import chatroom_output, chatroom_output, get_user_input
 from ..llm_agent_utils import output_message
 
-#this is basically just a Question answer agent, one prompt one response
+#this is basically just to prompt the user, it has to act like an agent
+# so it fits the tool call format
 class player_input(Agent):
     def handle(self, args): 
         tag = [args[0], args[1]["prompt"]]

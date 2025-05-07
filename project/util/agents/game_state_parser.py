@@ -2,6 +2,9 @@ from .agent import Agent
 import re
 import json
 
+
+#tool calls for the game_state_parser agent
+
 class gamestate_parser(Agent):
 
     def __init__(self, agent_info, game_state, agents):
