@@ -132,3 +132,16 @@ These add-ons are optional but improve user experience and show creativity (LO2)
 This demonstrates strong software engineering practices tied to LO2 and LO3.
 
 ---
+
+### Bugs:
+	Unfortunatly, with the case of the bugs, there are some I just cant fix. There are 2 main ones.
+	1. The Dungeon master will throw a fit and repeat the same sentance like 20 times. Let them wear themselves out, they will eventually give up. You can actualyl see this in the sample output. This may be fixed, but this bug is so illusive Im not going to say its gone forever.
+	2. The agents will sometimes softlock you because they wont say their ending phrase. State the ending phrase and tell them to say it and hopefully they say it.
+
+## Sample output:
+	sample output and sample image from the ouput
+
+![Screenshot 2025-05-06 at 22-40-35 DND LLM Chat](https://github.com/user-attachments/assets/5ad8f12f-f4d6-4b08-8c8a-27d4d3b57bf9)
+
+
+![output_image](https://github.com/user-attachments/assets/c2fb8e80-a131-46a3-a14f-d46575f8f3e0)
