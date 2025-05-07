@@ -18,7 +18,7 @@ class dungeon_master(Agent):
 
         #yell at the dungeon master for trying to use tool calls in the content output
         if dm_response["message"]["message"]["content"] != "":
-            self.add_message(["user" , "If you want to say something to the user use a function"])
+            self.add_message(["user" , "If you want to say something to the user use a function and you must say something different than" + dm_response["message"]["message"]["content"]])
         
 
         if  "tool_calls" in dm_response["message"]["message"]:

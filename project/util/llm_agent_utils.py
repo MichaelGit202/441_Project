@@ -46,6 +46,12 @@ def proccess_tool_calls(calls, agents):
         if name in agents:
             agents[name].handle([name, args])
         else:
+            output_message(
+                agents=agents,
+                agentsTags=["DM"],
+                message=["user", f"Agent '{name}' not found."],
+                IO=[]
+            )
             print(f"Agent '{name}' not found.")
 
 
