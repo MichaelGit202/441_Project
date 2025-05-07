@@ -7,6 +7,7 @@ from ..IO import chatroom_output
 class dungeon_master_speak(Agent):
     
     def handle(self, args): 
+        #print(self.agents["DM"].data["agent_template"]["messages"])
         output_message(
             agents=self.agents,
             agentsTags=["DM"],

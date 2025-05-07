@@ -19,10 +19,10 @@ def get_user_input():
         data = request.get_json()
         user_message = data.get('message', '')
         add_chat_message(["user", user_message])
-        #return jsonify({'reply': response})
+        return jsonify({'reply': 'Message received'})  
     else:
-        print("=============================================")   
         print(disabled_by_backend) 
+        return jsonify({'reply': 'Input is disabled by the DM'}), 403
 
 
 # I would note that you should never do this in flask
@@ -40,7 +40,6 @@ def listen_for_input():
             return new_message
 
 
-#this is heavily written by chat gpt if you could not tell
 # this is the ""Web socket"" that checks if new content has been added to the
 #webpage and if it did it adds it to chat_history automatically.
 # you can think of this as the ""
@@ -62,16 +61,12 @@ def stream():
     return Response(event_stream(), mimetype="text/event-stream")
 
 def add_chat_message(msg):
-    #print("INSIDE OF ADD_CHAT_MSG")
-    #print(msg)
     chat_history.append({'sender': msg[0], 'text': msg[1]})
 
 
-#here is a function that is called by a timer on the front end to update
-# the UI, I hate this
+#here is a function that is called by a timer on the front end to update the ui
 @app.route('/get_chat_history')
 def get_chat_history():
-    #print(chat_history)
     return jsonify({'history': chat_history})
 
 

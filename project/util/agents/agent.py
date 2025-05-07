@@ -2,6 +2,8 @@ import ollama
 from ..IO import cmd_output, chatroom_output
 from ..llm_agent_utils import output_message
 
+#the default agent class that ever agent inherits
+
 class Agent:
     
     def __init__(self, agent_info, game_state, agents):
@@ -26,7 +28,6 @@ class Agent:
 
     #handler function when agent is invoked
     def handle(self, content):
-         #print("handling")
         raise NotImplementedError("Subclasses should implement this method.")
 
 
@@ -44,14 +45,6 @@ class Agent:
 
 
     def add_message(self, msg):
-        #OK so here is what we are going to do
-        # to get these guys to talk to each other, we are going to add
-        # prompts from other agents will be appended as a USER prompt
-    
-        #if(msg[0] == self.data["metadata"]["tag"]):
-        #    self.data["agent_template"]["messages"].append({"role" : "assistant", "content" : msg[1]})
-        #else:
-        #    self.data["agent_template"]["messages"].append({"role" :"user", "content" : msg[1]})
         if(msg[0] == "user"):
             self.data["agent_template"]["messages"].append({"role" :"user", "content" : msg[1]})
         else:
@@ -76,7 +69,7 @@ class Agent:
     def parse_caller(self, message):
         pass
 
-    #NO >:(
+
     #def str_to_msg(self, str):
     #    msg = {}
     #    msg['message'] = {}

@@ -27,7 +27,7 @@ class dialogue_agent(Agent):
             # Generate the next response from the LLM
             response = self.generate()
             message = response["message"]["message"]
-
+            
             # Process any tool calls returned
             if "tool_calls" in message:
                 proccess_tool_calls(message["tool_calls"], self.agents)
@@ -49,7 +49,7 @@ class dialogue_agent(Agent):
                 })
 
             # End the conversation if cue is found
-            if re.search(r"END(.*)CONVERSATION", message_text, re.DOTALL):
+            if re.search(r"END(.*)CONVERSATION", message_text, re.DOTALL | re.IGNORECASE):
                 output_message(
                     agents=self.agents,
                     agentsTags=["DM", tag[0]],
