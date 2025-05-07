@@ -48,6 +48,7 @@ Each scenario demonstrates AI-driven logic (LO1), and working system functionali
 - **Temperature**: We went with a baseline temperature of 0.5 for anything that could be more creative, and for agents assigned to tasks like dice rolling or battling which need to follow very strict rules, we went with a lower temperature of 0.2.
 - **Max Tokens**: For the tokens, we went with a baseline of 100 tokens for all the models except for the dungeon master, since he will have the most information flowing into him in one prompt.
 ### Prompts:
+- all prompts can be found under project>agent_templates
 - Each agent has a message that dictates it's responsibilities, constraints, and output formatting so that it can interact with the rest of the system through regex matching. The prompts are different for each agent, and are foundational to their interaction with the user and the rest of the system.
 - Example: Prompt for scene_agent, which is responsible for creating the scenes:
 ```
@@ -62,9 +63,17 @@ The system integrates the following tools:
 
 - **RAG**: Queries a ChromaDB for relevant info when the LLM sees fit, to help it make a decision for the scenario that follows DND 5e rules, or to help get inspiration for scene generation or item description.
 - **RNG**: Rolls an n sided die, where n is decided by the parameter in the function call, and interprets what that result means in the context of the scenario.
+- **Scene**: Generates environment descriptions for different game settings.
+- **Player Input**: Prompts the player for decisions or actions in the game.
+- **RNG**: Simulates random outcomes for chance-based events.
+- **Dialogue**: Handles NPC conversations and interactions with the player.
+- **Battle**: Manages combat scenarios between the player and enemies.
+- **Item**: Generates or describes items found or used by the player.
+- **Trader**: Simulates buying, selling, or trading with NPCs.
 
+  -  Note: There is also many Game State functions inside of gamestate.py, which is employed by the game_state_agent. Though fully implementing this without causing too much delay in the game proved to take too long and it was set aside.
+  
 These tools reinforce AI capabilities (LO1) and leverage external libraries effectively (LO2).
-
 ---
 
 ## 4. Planning & Reasoning
@@ -72,7 +81,7 @@ These tools reinforce AI capabilities (LO1) and leverage external libraries effe
 We implemented multi-step reasoning via:
 
 - **Chain-of-Thought**: The dungeon master has a `<think>` tag, which it uses to do some informed decision making as it does in chain-of-thought.
-- **Context-Aware Dialogue**: Agents remember and respond to past player choices because of how the agents are spun up, and how they communicate with the dungeon master.
+- **Context-Aware Dialogue**: Agents remember and respond to past player choices because of how the agents are spun up, and how they communicate with the dungeon master. The dungeon master, instead of describing scenes, executing trades, generating items, performing battles...ect. The Dungeon master specifically performs tool calls to invoke other agents inorder to spit the thinking work amongst multiple specialized agents who can do it for the DM
 
 This improves coherence and decision-making, fulfilling LO1.
 
@@ -106,7 +115,7 @@ These add-ons are optional but improve user experience and show creativity (LO2)
 
 ### Codebase Structure:
 - `app.py` – Startup script for the whole game. Running this file creates the flask instance, and runs the various setup procedures for the app.
-- `agents` - Json templates for the agents
+- `agent_templates` - Json templates for the agents
 - `util/` –  Game logic that is beyond startup
 	- `util/agents` - contains the Agent superclass, and all of the agent subclasses
 	- `util/rag_documents` - contains the text files used by the program for RAG
